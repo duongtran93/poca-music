@@ -1,0 +1,42 @@
+.user-profile-top-menu {
+    float: left;
+    width: 100%;
+    position: relative;
+    margin: 0;
+    height: 50px;
+    background: #f4f4f4;
+    border-bottom: #E3E3E3 solid 0px;
+    overflow: hidden;
+}
+.wrap {
+    position: relative;
+}
+.wrap .content-wrap {
+    max-width: 1170px;
+    margin: 0 auto;
+    position: relative;
+    padding: 0 10px;
+}
+.user-profile-top-menu ul {
+    float: left;
+    width: auto;
+}
+.user-profile-top-menu ul li {
+    float: left;
+    width: auto;
+    margin: 0 20px 0 0;
+    list-style: none;
+}
+.user-profile-top-menu ul li a {
+    float: left;
+    width: auto;
+    margin: 0;
+    font-size: 15px;
+    line-height: 50px;
+}
+.user-profile-top-menu ul li a img.icon-home {
+    float: left;
+    width: 24px;
+    height: 24px;
+    margin: 13px 0 0 0;
+}
