@@ -1,7 +1,7 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
     "content-hash": "b34b0a54d82c7985a12d4dca749073ef",
@@ -659,6 +659,7 @@
         },
         {
             "name": "laravel/framework",
+<<<<<<< HEAD
             "version": "v6.6.2",
             "source": {
                 "type": "git",
@@ -669,6 +670,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/framework/zipball/27efba7e13aaf91a87ae9a63db158e943eb71410",
                 "reference": "27efba7e13aaf91a87ae9a63db158e943eb71410",
+=======
+            "version": "v6.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/framework.git",
+                "reference": "ba4204f3a8b9672b6116398c165bd9c0c6eac077"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/ba4204f3a8b9672b6116398c165bd9c0c6eac077",
+                "reference": "ba4204f3a8b9672b6116398c165bd9c0c6eac077",
+>>>>>>> 92d591a541fcd163b16edcb0e37489dd36ea2764
                 "shasum": ""
             },
             "require": {
@@ -801,7 +814,11 @@
                 "framework",
                 "laravel"
             ],
+<<<<<<< HEAD
             "time": "2019-12-05T13:49:53+00:00"
+=======
+            "time": "2019-12-10T16:01:57+00:00"
+>>>>>>> 92d591a541fcd163b16edcb0e37489dd36ea2764
         },
         {
             "name": "laravel/socialite",
