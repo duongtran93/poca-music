@@ -28,7 +28,7 @@ Route::prefix('user')->group(function () {
     Route::post('{id}/edit', 'UserController@update')->name('user.update');
     Route::get('/change-password', 'UserController@editpass')->name('user.editpass');
     Route::post('/change-password', 'UserController@updatepass')->name('user.updatepass');
-    Route::get('{name}', 'UserController@index')->name('user.index');
+    Route::get('{name?}', 'UserController@index')->name('user.index');
 });
 
 Route::prefix('song')->group(function () {

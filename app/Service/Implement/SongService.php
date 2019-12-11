@@ -27,7 +27,7 @@ class SongService implements ServiceInterface
             $file = $request->file('song');
             $fileExtension = $file->getClientOriginalExtension();
             $fileName = 'songs/files/'.$request->name.time().'.'.$fileExtension;
-            $file->storeAs('public/songs/files', $fileName);
+            $file->storeAs('public/', $fileName);
             $newSong->file = $fileName;
         }
         if ($request->hasFile('image')){

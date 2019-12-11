@@ -20,7 +20,7 @@ class SongController extends Controller
         try {
             $message = 'Them moi thanh Cong';
             $this->songService->create($request);
-                return redirect('user.index');
+                return redirect()->route('user.index');
         }
         catch (\Exception $e){
             return $e->getMessage();
