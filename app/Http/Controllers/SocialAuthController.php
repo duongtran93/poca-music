@@ -1,0 +1,37 @@
+<?php
+
+namespace App\Http\Controllers;
+
+
+use App\User;
+use Illuminate\Support\Facades\Auth;
+use Laravel\Socialite\Facades\Socialite;
+
+class SocialAuthController extends Controller
+{
+    public function redirect($provider)
+    {
+        return Socialite::driver($provider)->redirect();
+    }
+
+    public function callback($provider)
+    {
+        $getInfo = Socialite::driver($provider)->stateless()->user();
+        $user = $this->findOfCreate($getInfo, $provider);
+        Auth::login($user);
+        return redirect()->to('/home');
+    }
+    public function findOfCreate($getInfo, $provider) {
+        $user = User::where('provider', $provider)->first();
+        if (!$user)
+        {
+            $user = User::create([
+                'name' => $getInfo->name,
+                'password' => $getInfo->id,
+                'email' => $getInfo->email,
+                'provider' => $provider
+            ]);
+        }
+        return $user;
+    }
+}
