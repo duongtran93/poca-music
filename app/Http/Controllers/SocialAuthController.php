@@ -21,15 +21,14 @@ class SocialAuthController extends Controller
         Auth::login($user);
         return redirect()->to('/home');
     }
-    public function findOfCreate($getInfo, $provider) {
-        $user = User::where('provider', $provider)->first();
+    public function findOfCreate($getInfo) {
+        $user = User::where('email', $getInfo->email)->first();
         if (!$user)
         {
             $user = User::create([
                 'name' => $getInfo->name,
                 'password' => $getInfo->id,
                 'email' => $getInfo->email,
-                'provider' => $provider
             ]);
         }
         return $user;
