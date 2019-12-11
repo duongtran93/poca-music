@@ -1,4 +1,4 @@
-<header class="header-area">
+<header class="header-area" style="background-color: #2b303b">
     <!-- Main Header Start -->
     <div class="main-header-area">
         <div class="classy-nav-container breakpoint-off">
@@ -24,7 +24,7 @@
                     <!-- Nav Start -->
                     <div class="classynav">
                         <ul id="nav">
-                            <li class="current-item"><a href="{{ route('home') }}">Trang Chủ</a></li>
+                            <li><a href="{{ route('home') }}">Trang Chủ</a></li>
                             <li><a href="#">Top Hot</a></li>
                             <li><a href="#">Chủ Đề</a></li>
                             <li><a href="#">Album</a></li>

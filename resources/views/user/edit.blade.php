@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+@include('menu-user')
 <div class="container my-4">
     <div class="row d-flex justify-content-center">
         <div class="col-6">
@@ -12,11 +13,12 @@
                 </div>
                 <div class="form-group">
                     <label>Email</label>
-                    <input type="email" class="form-control" name="email" value="{{$user->email}}">
+                    <input type="email" class="form-control" name="email" value="{{$user->email}}" disabled>
                 </div>
                 <button type="submit" class="btn btn-primary">Lưu Thông Tin</button>
             </form>
         </div>
     </div>
 </div>
+@include('footer')
 @endsection

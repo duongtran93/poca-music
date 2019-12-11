@@ -63,7 +63,7 @@
                                         {{ __('Forgot Your Password?') }}
                                     </a>
                                 @endif
-                                <a href=""><img src="{{asset('storage/images/facebook.jpeg')}}" style="width: 50px; height: 50px"></a>
+{{--                                <a href=""><img src="{{asset('storage/images/facebook.jpeg')}}" style="width: 50px; height: 50px"></a>--}}
                             </div>
                         </div>
                     </form>
@@ -150,7 +150,7 @@
         </div>
     </div>
 </div>
-<header class="header-area">
+<header class="header-area" style="background-color: #2b303b">
     <!-- Main Header Start -->
     <div class="main-header-area">
         <div class="classy-nav-container breakpoint-off">
@@ -176,7 +176,7 @@
                     <!-- Nav Start -->
                     <div class="classynav">
                         <ul id="nav">
-                            <li class="current-item"><a href="{{ route('welcome') }}">Trang chủ</a></li>
+                            <li><a href="{{ route('welcome') }}">Trang chủ</a></li>
                             <li><a href="#">Top Hot</a></li>
                             <li><a href="">Chủ Đề</a></li>
                             <li><a href="">Album</a></li>

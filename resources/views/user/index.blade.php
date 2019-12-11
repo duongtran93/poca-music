@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+@include('menu-user')
 <div class="user-profile-top-menu">
         <div class="wrap">
             <div class="content-wrap">

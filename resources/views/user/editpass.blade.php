@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+@include('menu-user')
 <div class="container my-4">
     <div class="row d-flex justify-content-center">
         <div class="col-6">
@@ -32,4 +33,5 @@
         </div>
     </div>
 </div>
+@include('footer')
 @endsection

@@ -29,10 +29,10 @@
 {{--        <img src="{{ asset('storage/source/img/core-img/preloader.png') }}" alt="">--}}
 {{--    </div>--}}
 {{--</div>--}}
-@include('menu-user')
-@include('header')
-@yield('content')
-@include('footer')
+
+<div style="margin-top: 80px;">
+    @yield('content')
+</div>
 <!-- ******* All JS ******* -->
 <!-- jQuery js -->
 <script src="{{ asset('storage/source/js/jquery.min.js') }}"></script>
