@@ -33,4 +33,5 @@ Route::prefix('user')->group(function () {
 
 Route::prefix('song')->group(function () {
     Route::get('create', 'SongController@create')->name('song.create');
+    Route::post('store', 'SongController@store')->name('song.store');
 });
