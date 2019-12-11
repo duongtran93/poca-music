@@ -1,8 +1,9 @@
 @extends('layouts.app')
+
 @section('content')
     <div class="container">
         <div class="card">
-            <h5 class="card-header">Create Song</h5>
+            <h5 class="card-header">Edit Song</h5>
             <div class="card-body">
                 <form method="post" enctype="multipart/form-data">
                     @csrf
@@ -27,5 +28,4 @@
             </div>
         </div>
     </div>
-
     @endsection

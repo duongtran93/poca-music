@@ -19,6 +19,8 @@
     <link rel="stylesheet" href="{{ asset('storage/source/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('storage/source/style.css') }}">
     <link href="{{ asset('storage/mycss/user-profile.css') }}" rel="stylesheet">
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>tinymce.init({selector:'textarea'});</script>
 
 </head>
 
