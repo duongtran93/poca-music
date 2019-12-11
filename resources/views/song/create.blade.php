@@ -4,15 +4,15 @@
         <div class="card">
             <h5 class="card-header">Create Song</h5>
             <div class="card-body">
-                <form method="post" enctype="multipart/form-data">
+                <form method="post" action="{{route('song.store')}}" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <label for="name">Name</label>
-                        <input type="text" class="form-control" id="name" >
+                        <input type="text" class="form-control" id="name" name="name">
                     </div>
                     <div class="form-group">
                         <label for="description">Description</label>
-                        <textarea type="text" class="form-control" id="description" ></textarea>
+                        <textarea type="text" class="form-control" id="description" name="description"></textarea>
                     </div>
                     <div class="form-group">
                         <label for="song">Song</label>

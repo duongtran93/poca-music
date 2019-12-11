@@ -17,7 +17,7 @@ class SocialAuthController extends Controller
     public function callback($provider)
     {
         $getInfo = Socialite::driver($provider)->stateless()->user();
-        $user = $this->findOfCreate($getInfo, $provider);
+        $user = $this->findOfCreate($getInfo);
         Auth::login($user);
         return redirect()->to('/home');
     }
