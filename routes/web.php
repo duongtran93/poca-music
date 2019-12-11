@@ -21,7 +21,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
+Route::get('/redirect/{social}', 'SocialAuthController@redirect');
+Route::get('/callback/{social}', 'SocialAuthController@callback');
 Route::prefix('user')->group(function () {
     Route::get('{id}/edit', 'UserController@edit')->name('user.edit');
     Route::post('{id}/edit', 'UserController@update')->name('user.update');

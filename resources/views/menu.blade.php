@@ -63,7 +63,7 @@
                                         {{ __('Forgot Your Password?') }}
                                     </a>
                                 @endif
-{{--                                <a href=""><img src="{{asset('storage/images/facebook.jpeg')}}" style="width: 50px; height: 50px"></a>--}}
+                                <a href="redirect/facebook"><img src="{{asset('storage/images/facebook.jpeg')}}" style="width: 50px; height: 50px"></a>
                             </div>
                         </div>
                     </form>
