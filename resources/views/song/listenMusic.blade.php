@@ -1,4 +1,4 @@
 @extends('layouts.app')
 @section('content')
-    @include('menu')
+    @include('menu-user')
     @endsection
