@@ -29,7 +29,7 @@
                     </div>
                     <div class="form-group">
                         <label for="image">Image</label>
-                        <input type="file" class="form-control" id="image" name="image" accept=".png, .jpg, .jpeg"  >
+                        <input type="file" class="form-control" id="image" name="image"   >
                         @if($errors->has('image'))
                             <p class="text-danger">*{{$errors->first('image')}}</p>
                         @endif
