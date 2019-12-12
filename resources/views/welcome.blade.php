@@ -6,6 +6,7 @@
     <meta name="description" content="Poca - Podcast &amp; Audio Template">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
 
     <!-- Title -->
     <title>Poca - Podcast &amp; Audio</title>
@@ -20,6 +21,14 @@
     <link rel="stylesheet" href="{{ asset('storage/mycss/login.css') }}">
     <link rel="stylesheet" href="{{ asset('storage/mycss/register.css') }}">
 
+    {{--    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>--}}
+    <script type="text/javascript">
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+    </script>
 </head>
 
 <body>
@@ -53,6 +62,9 @@
 <script src="{{ asset('storage/source/js/poca.bundle.js') }}"></script>
 <!-- Active js -->
 <script src="{{ asset('storage/source/js/default-assets/active.js') }}"></script>
+
+<script type="text/javascript" src="{{ asset('storage/myjs/login.js') }}"></script>
+<script type="text/javascript" src="{{ asset('storage/myjs/show-hide-password.js') }}"></script>
 
 </body>
 

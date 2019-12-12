@@ -3,7 +3,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="login-form">
-                <form action="{{ route('login') }}" method="post">
+                <form id="login" action="{{ route('login') }}" method="post">
                     @csrf
                     <h2 class="text-center">Login</h2>
                     <div class="text-center social-btn">
@@ -14,29 +14,30 @@
                     <div class="form-group">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="Email" required autocomplete="email" autofocus>
+                            <input id="email" type="email" class="form-control @error('email') @enderror" name="email" value="{{ old('email') }}" placeholder="Email" required autocomplete="email" autofocus>
 
-                            @error('email')
-                            <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                            @enderror
+{{--                            @error('email')--}}
+{{--                            <span class="invalid-feedback" role="alert">--}}
+                                        <strong id="email-error" class="text-danger"></strong>
+{{--                                    </span>--}}
+{{--                            @enderror--}}
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="Password">
+                            <input id="password" type="password" class=" password form-control @error('password') @enderror" name="password" required autocomplete="current-password" placeholder="Password">
+                            <span id="toggle-password" toggle="#password-field" class="fa fa-fw fa-eye field_icon " style="position: absolute"></span>
 
-                            @error('password')
-                            <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                            @enderror
+                            {{--                            @error('password')--}}
+{{--                            <span class="invalid-feedback" role="alert">--}}
+                                        <strong id="password-error" class="text-danger"></strong>
+{{--                                    </span>--}}
+{{--                            @enderror--}}
                         </div>
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-success btn-block login-btn">Login</button>
+                        <button type="submit" id="loginForm" class="btn btn-success btn-block login-btn" >Login</button>
                     </div>
                     <div class="clearfix">
                         <label class="pull-left checkbox-inline" for="remember">
@@ -87,7 +88,8 @@
                     <div class="form-group">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="Password" required autocomplete="new-password">
+                            <input id="password" type="password" class="password form-control @error('password') is-invalid @enderror" name="password" placeholder="Password" required autocomplete="new-password">
+                            <span id="toggle-password" toggle="#password-field" class="fa fa-fw fa-eye field_icon " style="position: absolute"></span>
 
                             @error('password')
                             <span class="invalid-feedback" role="alert">
@@ -103,6 +105,7 @@
 					<i class="fa fa-check"></i>
 				</span>
                             <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="Confirm Password" required autocomplete="new-password">
+                            <span id="toggle-password-confirm" toggle="#password-field" class="fa fa-fw fa-eye field_icon " style="position: absolute"></span>
                         </div>
                     </div>
                     <div class="form-group">
