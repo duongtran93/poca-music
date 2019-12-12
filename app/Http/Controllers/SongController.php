@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\EditSongRequest;
 use App\Http\Requests\SongRequest;
 use App\Service\Implement\SongService;
 use Illuminate\Http\Request;
@@ -38,7 +39,7 @@ class SongController extends Controller
         return view('song.edit', compact('song'));
     }
 
-    public function update(Request $request, $id)
+    public function update(EditSongRequest $request, $id)
     {
         try {
             $this->songService->update($request, $id);
