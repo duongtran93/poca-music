@@ -70,4 +70,8 @@ class SongService implements ServiceInterface
         }
         $this->songRepository->save($song);
     }
+    public function delete($obj)
+    {
+        $this->songRepository->delete($obj);
+    }
 }
