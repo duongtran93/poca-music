@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    @include('menu-user')
+    <div class="container mt-100">
         <div class="card">
             <h5 class="card-header">Edit Song</h5>
             <div class="card-body">
@@ -21,11 +22,14 @@
                     </div>
                     <div class="form-group">
                         <label for="image">Image</label>
-                        <input type="file" class="form-control" name="image" accept=".png, .jpg, .jpeg" value="{{$song->image}}" >
+                        <img src="{{asset('storage/' . $song->image)}}" style="width: 50px ; height: 50px">
+                        <input type="file" class="form-control" name="image" accept=".png, .jpg, .jpeg" >
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
+                    <a href="{{route('user.index')}}" class="btn btn-dark">Cancel</a>
                 </form>
             </div>
         </div>
     </div>
+    @include('footer')
     @endsection

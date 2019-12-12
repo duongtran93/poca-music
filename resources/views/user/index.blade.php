@@ -38,7 +38,7 @@
                     @foreach($songs as $key => $song)
                         <tr>
                             <th scope="row">{{++ $key}}</th>
-                            <td><a href="">{{$song->name}}</a></td>
+                            <td><a href="{{route('song.listen', $song->id)}}">{{$song->name}}</a></td>
                             <td>
                                 <audio controls>
                                     <source src="{{asset('storage/'.$song->file)}}">
@@ -58,4 +58,5 @@
             </div>
         </div>
     </div>
+    @include('footer')
 @endsection
