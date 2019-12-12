@@ -28,4 +28,8 @@ abstract class RepositoryEloquent implements RepositoryInterface
     {
         return $this->model->find($id);
     }
+    public function delete($obj)
+    {
+        $obj->delete();
+    }
 }

@@ -36,4 +36,5 @@ Route::prefix('song')->group(function () {
     Route::post('store', 'SongController@store')->name('song.store');
     Route::get('edit/{id}', 'SongController@edit')->name('song.edit');
     Route::post('edit/{id}', 'SongController@update')->name('song.update');
+    Route::get('delete/{id}', 'SongController@delete')->name('song.delete');
 });
