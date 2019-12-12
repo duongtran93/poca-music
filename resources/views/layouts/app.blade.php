@@ -21,7 +21,8 @@
     <link href="{{ asset('storage/mycss/user-profile.css') }}" rel="stylesheet">
     <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
     <script>tinymce.init({selector:'textarea'});</script>
-
+    <link href="{{ asset('storage/mycss/editUser.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>

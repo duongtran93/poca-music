@@ -1,24 +1,37 @@
 @extends('layouts.app')
 @section('content')
 @include('menu-user')
-<div class="container my-4">
-    <div class="row d-flex justify-content-center">
-        <div class="col-6">
-            <h2 class="display-4 text-primary">Chỉnh Sửa Thông Tin</h2>
-            <form method="post" action="{{route('user.update', $user->id)}}">
-                @csrf
-                <div class="form-group">
-                    <label>Name</label>
-                    <input type="text" class="form-control" name="name" value="{{$user->name}}">
-                </div>
-                <div class="form-group">
-                    <label>Email</label>
-                    <input type="email" class="form-control" name="email" value="{{$user->email}}" disabled>
-                </div>
-                <button type="submit" class="btn btn-primary">Lưu Thông Tin</button>
-            </form>
+<div class="container">
+    <div class="d-flex justify-content-center h-100">
+        <div class="card">
+            <div class="card-header">
+                <h3>Chỉnh Sửa Thông Tin</h3>
+            </div>
+            <div class="card-body">
+                <form method="post" action="{{route('user.update', $user->id)}}">
+                    @csrf
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Name</span>
+                        </div>
+                        <input type="text" class="form-control" name="name" value="{{$user->name}}">
+                    </div>
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Email</span>
+                        </div>
+                        <input type="email" class="form-control" name="email" value="{{$user->email}}" disabled>
+                    </div>
+                    <div class="form-group d-flex justify-content-center">
+                        <button type="submit" class="btn update_btn ">Lưu thông tin</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </div>
 @include('footer')
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 @endsection
