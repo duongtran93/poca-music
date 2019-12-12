@@ -26,4 +26,18 @@ class SongController extends Controller
             return $e->getMessage();
         }
     }
+    public function edit($id){
+        $song = $this->songService->findById($id);
+        return view('song.edit', compact('song'));
+    }
+    public function update(Request $request, $id)
+    {
+        try {
+            $this->songService->update($request, $id);
+            return redirect()->route('user.index');
+        }catch (\Exception $e)
+        {
+            return $e->getMessage();
+        }
+    }
 }
