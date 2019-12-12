@@ -3,7 +3,7 @@
 @include('menu-user')
 <div class="container">
     <div class="d-flex justify-content-center h-100">
-        <div class="cardPass">
+        <div class="card-changer-pass">
             <div class="card-header">
                 <h3>Đổi Mật Khẩu</h3>
             </div>
