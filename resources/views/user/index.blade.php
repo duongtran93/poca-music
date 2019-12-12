@@ -39,15 +39,17 @@
                         <tr>
                             <th scope="row">{{++ $key}}</th>
                             <td><a href="">{{$song->name}}</a></td>
-                            <td><audio controls>
+                            <td>
+                                <audio controls>
                                     <source src="{{asset('storage/'.$song->file)}}">
-                                </audio></td>
+                                </audio>
+                            </td>
                             <td><img src="{{asset('storage/'. $song->image)}}" style="width: 80px "></td>
                             <td>
-                                <button class="btn btn-success">Edit</button>
-                                <button class="btn btn-danger" onclick="confirm('xoa khong?')">
-                                    <a href="{{route('song.delete', $song->id)}}">Delete</a>
-                                </button>
+                                <a href="{{route('song.edit', $song->id)}}"><button class="btn btn-success">Edit</button></a>
+                                <a href="{{route('song.delete', $song->id)}}" onclick="return confirm('xoa khong?')">
+                                    <button class="btn btn-danger">Delete</button>
+                                </a>
                             </td>
                         </tr>
                     @endforeach

@@ -66,7 +66,7 @@ class SongService implements ServiceInterface
             }
             $newImage = $request->image;
             $pathImage = $newImage->store('songs/images', 'public');
-            $song->file = $pathImage;
+            $song->image = $pathImage;
         }
         $this->songRepository->save($song);
     }
