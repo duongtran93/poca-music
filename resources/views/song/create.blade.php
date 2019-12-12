@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
-    <div class="container">
+    @include('menu-user')
+    <div class="container mt-100">
         <div class="card">
             <h5 class="card-header">Create Song</h5>
             <div class="card-body">
@@ -35,9 +36,10 @@
                         @endif
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
+                    <a href="{{route('user.index')}}" class="btn btn-dark">Cancel</a>
                 </form>
             </div>
         </div>
     </div>
-
+    @include('footer')
     @endsection
