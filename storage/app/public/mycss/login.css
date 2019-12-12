@@ -1,0 +1,97 @@
+.login-form {
+    width: 340px;
+    margin: 30px auto;
+}
+.login-form form {
+    margin-bottom: 15px;
+    background: #f7f7f7;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+}
+.login-form h2 {
+    margin: 0 0 15px;
+}
+.login-form .hint-text {
+    color: #777;
+    padding-bottom: 15px;
+    text-align: center;
+}
+.form-control, .btn {
+    min-height: 38px;
+    border-radius: 2px;
+}
+.login-btn {
+    font-size: 15px;
+    font-weight: bold;
+}
+.or-seperator {
+    margin: 20px 0 10px;
+    text-align: center;
+    border-top: 1px solid #ccc;
+}
+.or-seperator i {
+    padding: 0 10px;
+    background: #f7f7f7;
+    position: relative;
+    top: -11px;
+    z-index: 1;
+}
+.social-btn .btn {
+    margin: 10px 0;
+    font-size: 15px;
+    text-align: left;
+    line-height: 24px;
+}
+.social-btn .btn i {
+    float: left;
+    margin: 4px 15px  0 5px;
+    min-width: 15px;
+}
+.input-group {
+    position: relative;
+    display: table;
+    border-collapse: separate;
+}
+.input-group-addon:first-child {
+    border-right: 0;
+}
+.input-group-addon {
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
+    color: #555;
+    text-align: center;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 1%;
+    white-space: nowrap;
+    vertical-align: middle;
+    display: table-cell;
+}
+.input-group-addon .fa{
+    font-size: 18px;
+}
+.input-group .form-control:last-child {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.input-group .form-control {
+    display: table-cell;
+    position: relative;
+    z-index: 2;
+    float: left;
+    width: 100%;
+    margin-bottom: 0;
+    min-height: 38px;
+    border-radius: 2px;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+}

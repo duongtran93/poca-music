@@ -10,12 +10,15 @@
     <!-- Title -->
     <title>Poca - Podcast &amp; Audio</title>
 {{--    <base href="{{ asset('') }}">--}}
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Favicon -->
     <link rel="icon" href="{{ asset('storage/source/img/core-img/favicon.ico') }}">
 
     <!-- Core Stylesheet -->
     <link rel="stylesheet" href="{{ asset('storage/source/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('storage/source/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('storage/mycss/login.css') }}">
+    <link rel="stylesheet" href="{{ asset('storage/mycss/register.css') }}">
 
 </head>
 
