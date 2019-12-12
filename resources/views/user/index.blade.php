@@ -20,4 +20,38 @@
             </div>
         </div>
 </div>
+<div class="container">
+    <div class="card mt-5">
+        <h5 class="card-header">Song List</h5>
+        <div class="card-body">
+            <table class="table table-bordered">
+                <thead class="thead-dark">
+                <tr>
+                    <th scope="col">STT</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Image</th>
+                    <th scope="col">Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach($songs as $key => $song)
+                <tr>
+                    <th scope="row">{{++ $key}}</th>
+                    <td>{{$song->name}}</td>
+                    <td><audio controls>
+                            <source src="{{asset('storage/'.$song->file)}}">
+                        </audio></td>
+                    <td></td>
+                    <td>
+                        <button class="btn btn-success">Edit</button>
+                        <button class="btn btn-danger">Delete</button>
+                    </td>
+                </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
 @endsection
