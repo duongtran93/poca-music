@@ -21,7 +21,8 @@
                     </div>
                     <div class="form-group">
                         <label for="image">Image</label>
-                        <input type="file" class="form-control" name="image" accept=".png, .jpg, .jpeg" value="{{$song->image}}" >
+                        <img src="{{asset('storage/' . $song->image)}}" style="width: 50px ; height: 50px">
+                        <input type="file" class="form-control" name="image" accept=".png, .jpg, .jpeg" >
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>

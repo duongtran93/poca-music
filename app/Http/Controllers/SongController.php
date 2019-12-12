@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SongRequest;
 use App\Service\Implement\SongService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -16,7 +17,7 @@ class SongController extends Controller
     public function create() {
         return view('song.create');
     }
-    public function store(Request $request)
+    public function store(SongRequest $request)
     {
         try {
             $message = 'Them moi thanh Cong';
