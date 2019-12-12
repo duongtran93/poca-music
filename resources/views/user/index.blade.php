@@ -35,16 +35,20 @@
                 </tr>
                 </thead>
                 <tbody>
+                @foreach($songs as $key => $song)
                 <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>Otto</td>
+                    <th scope="row">{{++ $key}}</th>
+                    <td>{{$song->name}}</td>
+                    <td><audio controls>
+                            <source src="{{asset('storage/'.$song->file)}}">
+                        </audio></td>
+                    <td></td>
                     <td>
                         <button class="btn btn-success">Edit</button>
                         <button class="btn btn-danger">Delete</button>
                     </td>
                 </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>
