@@ -39,7 +39,11 @@
                         <tr>
                             <th scope="row">{{++ $key}}</th>
                             <td><a href="{{route('song.listen', $song->id)}}">{{$song->name}}</a></td>
-                           <td>{!! $song->desc !!}</td>
+                            <td>
+                                <audio controls>
+                                    <source src="{{asset('storage/'.$song->file)}}">
+                                </audio>
+                            </td>
                             <td><img src="{{asset('storage/'. $song->image)}}" style="width: 80px "></td>
                             <td>
                                 <a href="{{route('song.edit', $song->id)}}"><button class="btn btn-success">Edit</button></a>
