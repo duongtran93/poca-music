@@ -8,6 +8,7 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
@@ -31,6 +32,16 @@ class UserController extends Controller
     public function update(Request $request, $id) {
         $user = User::findOrFail($id);
         $user->name = $request->name;
+        $user->phone = $request->phone;
+        $user->address = $request->address;
+        if ($request->avatar) {
+            Storage::delete('public/avatar/'. $user->avatar);
+            $avatar = $request->file('avatar');
+            $avatarExtension = $avatar->getClientOriginalExtension();
+            $avatarName = $user->name . time() .'.' . $avatarExtension;
+            $avatar->storeAs('public/avatar', $avatarName);
+            $user->avatar = $avatarName;
+        }
         $user->save();
 
         return view('home');

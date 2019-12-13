@@ -53,7 +53,7 @@
                             @else
                                 <li class="nav-item dropdown">
                                     <a id="navbarDropdown" style="color: white" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                        <img src="{{asset('storage/images/user-login.png')}}" style="width: 40px; height: 40px;border-radius: 50%">
+                                        <img src="{{ asset('storage/avatar/' . Auth::user()->avatar) }}" style="width: 40px; height: 40px;border-radius: 50%">
                                         {{ Auth::user()->name }} <span class="caret"></span>
                                     </a>
 

@@ -10,8 +10,9 @@
     <!-- Title -->
     <title>Poca - Podcast &amp; Audio</title>
 {{--    <base href="{{ asset('') }}">--}}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<!-- Favicon -->
+    <!-- Favicon -->
     <link rel="icon" href="{{ asset('storage/source/img/core-img/favicon.ico') }}">
 
     <!-- Core Stylesheet -->
@@ -19,6 +20,7 @@
     <link rel="stylesheet" href="{{ asset('storage/source/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('storage/source/style.css') }}">
     <link href="{{ asset('storage/mycss/user-profile.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('storage/mycss/toastr.css') }}">
     <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
     <script>tinymce.init({selector:'textarea'});</script>
     <link href="{{ asset('storage/mycss/editUser.css') }}" rel="stylesheet">
@@ -47,6 +49,9 @@
 <script src="{{ asset('storage/source/js/poca.bundle.js') }}"></script>
 <!-- Active js -->
 <script src="{{ asset('storage/source/js/default-assets/active.js') }}"></script>
+<script type="text/javascript" src="{{ asset('storage/myjs/show-hide-password.js') }}"></script>
+<script type="text/javascript" src="{{ asset('storage/myjs/toastr.js') }}"></script>
+
 
 </body>
 
