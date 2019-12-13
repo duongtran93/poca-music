@@ -8,13 +8,14 @@
                 <h3>Đổi Mật Khẩu</h3>
             </div>
             <div class="card-body">
-                <form method="post" action="{{route('user.updatepass')}}">
+                <form id="editpass-form" method="post" action="{{route('user.updatepass')}}">
                     @csrf
                     <div class="input-group form-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text">Mật khẩu cũ</span>
                         </div>
-                        <input type="password" class="form-control" name="old_password">
+                        <input id="old-password" type="password" class="form-control" name="old_password">
+                        <span id="toggle-old-password" toggle="#password-field" class="fa fa-fw fa-eye field_icon " style="color: white"></span>
                     </div>
                     @if($errors->has('old_password'))
                         <p class="text-danger">* {{ $errors->first('old_password') }}</p>
@@ -23,7 +24,8 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text">Mật khẩu mới</span>
                         </div>
-                        <input type="password" class="form-control"  name="new_password">
+                        <input id="new-password" type="password" class="form-control"  name="new_password">
+                        <span id="toggle-new-password" toggle="#password-field" class="fa fa-fw fa-eye field_icon " style="color: white"></span>
                     </div>
                     @if($errors->has('new_password'))
                         <p class="text-danger">* {{ $errors->first('new_password') }}</p>
@@ -32,14 +34,14 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text">Nhập lại mật khẩu</span>
                         </div>
-                        <input type="password" class="form-control" name="password_confirm">
-
+                        <input id="password-confirm" type="password" class="form-control" name="password_confirm">
+                        <span id="toggle-password-confirm" toggle="#password-field" class="fa fa-fw fa-eye field_icon " style="color: white"></span>
                     </div>
                         @if($errors->has('password_confirm'))
                             <p class="text-danger">* {{ $errors->first('password_confirm') }}</p>
                         @endif
                     <div class="form-group d-flex justify-content-center">
-                        <button type="submit" class="btn update_btn">Đổi Mật Khẩu</button>
+                        <button id="edit-password" type="submit" class="btn update_btn">Đổi Mật Khẩu</button>
                     </div>
                 </form>
             </div>

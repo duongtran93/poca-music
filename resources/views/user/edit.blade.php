@@ -8,7 +8,7 @@
                     <h3>Chỉnh Sửa Thông Tin</h3>
                 </div>
                 <div class="card-body">
-                    <form method="post" action="{{route('user.update', $user->id)}}">
+                    <form method="post" action="{{route('user.update', $user->id)}}" enctype="multipart/form-data">
                         @csrf
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
@@ -21,6 +21,24 @@
                                 <span class="input-group-text">Email</span>
                             </div>
                             <input type="email" class="form-control" name="email" value="{{$user->email}}" disabled>
+                        </div>
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Phone</span>
+                            </div>
+                            <input type="text" class="form-control" name="phone" value="{{$user->phone}}">
+                        </div>
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Address</span>
+                            </div>
+                            <input type="text" class="form-control" name="address" value="{{$user->address}}">
+                        </div>
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Avatar</span>
+                            </div>
+                            <input type="file" class="form-control" name="avatar">
                         </div>
                         <div class="form-group d-flex justify-content-center">
                             <button type="submit" class="btn update_btn ">Lưu thông tin</button>
