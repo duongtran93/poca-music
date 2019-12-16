@@ -11,7 +11,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="{{route('song.playlist')}}">Playlist</a>
+                        <a href="{{route('playlist.index')}}">Playlist</a>
                     </li>
                     <li>
                         <a href="{{ route('song.create') }}">Upload</a>
