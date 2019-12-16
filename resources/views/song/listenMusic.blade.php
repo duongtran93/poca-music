@@ -25,5 +25,14 @@
             </div>
         </div>
     </div>
+    <div class="container mt-40">
+        <div class="row">
+            <div>
+                <h3>Lời Bài Hát :</h3><br>
+                {!! $song->desc !!}
+            </div>
+        </div>
+    </div>
+
     @include('footer')
     @endsection
