@@ -15,6 +15,7 @@ class SongController extends Controller
     public function __construct(SongService $songService)
     {
         $this->songService = $songService;
+        $this->middleware('auth');
     }
 
     public function create()
