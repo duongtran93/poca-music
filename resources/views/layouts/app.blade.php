@@ -14,7 +14,6 @@
 
     <!-- Favicon -->
     <link rel="icon" href="{{ asset('storage/source/img/core-img/favicon.ico') }}">
-    <link rel="icon" href="{{ asset('storage/Login/images/icons/favicon.ico') }}">
 
     <!-- Core Stylesheet -->
 
@@ -35,7 +34,8 @@
     <script>tinymce.init({selector:'textarea'});</script>
     <link href="{{ asset('storage/mycss/editUser.css') }}" rel="stylesheet">
     <link href="{{ asset('storage/mycss/playlist.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('storage/Login/fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}">
+{{--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">--}}
 </head>
 
 <body>
