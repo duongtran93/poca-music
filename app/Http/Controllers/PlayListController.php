@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\PlayList;
 use App\Service\PlayListServiceInterface;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PlayListController extends Controller
 {
@@ -16,7 +18,7 @@ class PlayListController extends Controller
 
     public function index()
     {
-        $playlists = $this->playlistService->getAll();
+        $playlists = PlayList::where('user_id', Auth::user()->id)->get();
         return view('playlist.index', compact('playlists'));
     }
 
