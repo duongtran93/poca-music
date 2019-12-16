@@ -72,4 +72,8 @@ class SongController extends Controller
         $song = $this->songService->findById($id);
         return view('song.listenMusic', compact('song'));
     }
+
+    public function playlist() {
+        return view('song.playlist');
+    }
 }
