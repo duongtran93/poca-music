@@ -15,6 +15,7 @@ class SongController extends Controller
     public function __construct(SongService $songService)
     {
         $this->songService = $songService;
+        $this->middleware('auth');
     }
 
     public function create()
@@ -71,5 +72,9 @@ class SongController extends Controller
     {
         $song = $this->songService->findById($id);
         return view('song.listenMusic', compact('song'));
+    }
+
+    public function playlist() {
+        return view('song.playlist');
     }
 }
