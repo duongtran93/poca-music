@@ -14,6 +14,7 @@
 
     <!-- Favicon -->
     <link rel="icon" href="{{ asset('storage/source/img/core-img/favicon.ico') }}">
+    <link rel="icon" href="{{ asset('storage/Login/images/icons/favicon.ico') }}">
 
     <!-- Core Stylesheet -->
 
@@ -21,6 +22,15 @@
     <link rel="stylesheet" href="{{ asset('storage/source/style.css') }}">
     <link href="{{ asset('storage/mycss/user-profile.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('storage/mycss/toastr.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{asset('storage/Login/fonts/Linearicons-Free-v1.0.0/icon-font.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('storage/Login/vendor/animate/animate.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('storage/Login/vendor/css-hamburgers/hamburgers.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('storage/Login/vendor/animsition/css/animsition.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('storage/Login/vendor/select2/select2.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('storage/Login/vendor/daterangepicker/daterangepicker.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('storage/Login/css/util.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('storage/Login/css/main.css') }}">
+
     <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
     <script>tinymce.init({selector:'textarea'});</script>
     <link href="{{ asset('storage/mycss/editUser.css') }}" rel="stylesheet">
@@ -52,6 +62,12 @@
 <script src="{{ asset('storage/source/js/default-assets/active.js') }}"></script>
 <script type="text/javascript" src="{{ asset('storage/myjs/show-hide-password.js') }}"></script>
 <script type="text/javascript" src="{{ asset('storage/myjs/toastr.js') }}"></script>
+<script src="{{ asset('storage/Login/vendor/animsition/js/animsition.min.js') }}"></script>
+<script src="{{ asset('storage/Login/vendor/select2/select2.min.js') }}"></script>
+<script src="{{ asset('storage/Login/vendor/daterangepicker/moment.min.js') }}"></script>
+<script src="{{ asset('storage/Login/vendor/daterangepicker/daterangepicker.js') }}"></script>
+<script src="{{ asset('storage/Login/vendor/countdowntime/countdowntime.js') }}"></script>
+<script src="{{ asset('storage/Login/js/main.js') }}"></script>
 
 
 </body>

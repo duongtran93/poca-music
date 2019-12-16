@@ -1,122 +1,4 @@
 
-<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="login-form">
-                <form id="login" action="{{ route('login') }}" method="post">
-                    @csrf
-                    <h2 class="text-center">Login</h2>
-                    <div class="text-center social-btn">
-                        <a href="redirect/facebook" class="btn btn-primary btn-block"><i class="fa fa-facebook"></i> Login with <b>Facebook</b></a>
-                        <a href="#" class="btn btn-danger btn-block"><i class="fa fa-google"></i> Login with <b>Google</b></a>
-                    </div>
-                    <div class="or-seperator"><i>or</i></div>
-                    <div class="form-group">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                            <input id="email" type="email" class="form-control @error('email') @enderror" name="email" value="{{ old('email') }}" placeholder="Email" required autocomplete="email" autofocus>
-
-{{--                            @error('email')--}}
-{{--                            <span class="invalid-feedback" role="alert">--}}
-                                        <strong id="email-error" class="text-danger"></strong>
-{{--                                    </span>--}}
-{{--                            @enderror--}}
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                            <input id="password" type="password" class=" password form-control @error('password') @enderror" name="password" required autocomplete="current-password" placeholder="Password">
-                            <span id="toggle-password" toggle="#password-field" class="fa fa-fw fa-eye field_icon " style="position: absolute"></span>
-
-                            {{--                            @error('password')--}}
-{{--                            <span class="invalid-feedback" role="alert">--}}
-                                        <strong id="password-error" class="text-danger"></strong>
-{{--                                    </span>--}}
-{{--                            @enderror--}}
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <button type="submit" id="loginForm" class="btn btn-success btn-block login-btn" >Login</button>
-                    </div>
-                    <div class="clearfix">
-                        <label class="pull-left checkbox-inline" for="remember">
-                        <input type="checkbox" id="remember" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me</label>
-                        @if (Route::has('password.request'))
-                            <a href="{{ route('password.request') }}" class="pull-right text-success">Forgot Password?</a>
-                        @endif
-                    </div>
-
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-scrollable" role="document">
-        <div class="modal-content">
-            <div class="signup-form">
-                <form action="{{ route('register') }}" method="post">
-                    @csrf
-                    <h2>Sign Up</h2>
-                    <hr>
-                    <div class="form-group">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                            <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" placeholder="User Name" required autocomplete="name" autofocus>
-
-                            @error('name')
-                            <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                            @enderror
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="Email Address" required autocomplete="email">
-
-                            @error('email')
-                            <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                            @enderror
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                            <input id="password" type="password" class="password form-control @error('password') is-invalid @enderror" name="password" placeholder="Password" required autocomplete="new-password">
-                            <span id="toggle-password" toggle="#password-field" class="fa fa-fw fa-eye field_icon " style="position: absolute"></span>
-
-                            @error('password')
-                            <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                            @enderror
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="input-group">
-				<span class="input-group-addon">
-					<i class="fa fa-lock"></i>
-					<i class="fa fa-check"></i>
-				</span>
-                            <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="Confirm Password" required autocomplete="new-password">
-                            <span id="toggle-password-confirm" toggle="#password-field" class="fa fa-fw fa-eye field_icon " style="position: absolute"></span>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-
 <header class="header-area" style="background-color: #2b303b">
     <!-- Main Header Start -->
     <div class="main-header-area">
@@ -164,11 +46,10 @@
                                 <img src="{{asset('storage/images/user3.png')}}" style="width: 40px; height: 40px; border-radius: 50%">
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="min-width: 1rem">
-{{--                                <a class="dropdown-item" data-toggle="modal" data-target="#exampleModal">Đăng nhập</a>--}}
-                                <button type="button" class=" btn dropdown-item" data-toggle="modal" data-target="#loginModal">Đăng nhập</button>
+                                <a href="{{ route('login') }}" class="btn dropdown-item" role="button">Đăng nhập</a>
                                 <div class="dropdown-divider"></div>
                                 @if (Route::has('register'))
-                                    <button type="button" class=" btn dropdown-item" data-toggle="modal" data-target="#registerModal">Đăng ký</button>
+                                    <a href="{{ route('register') }}" class="btn dropdown-item" role="button">Đăng ký</a>
                                 @endif
                             </div>
                         </div>
