@@ -12,14 +12,24 @@ class CategoriesTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('categories')->insert([
-            [
-                'id' => '1',
-                'name' => 'nhac tre'
-            ],
-            [
-                'id' => '2',
-                'name' => 'nhac cai luong']
-        ]);
+        $category = new \App\Category();
+        $category->name = 'Nhạc trẻ';
+        $category->save();
+
+        $category = new \App\Category();
+        $category->name = 'Rap Việt';
+        $category->save();
+
+        $category = new \App\Category();
+        $category->name = 'Nhạc Remix';
+        $category->save();
+
+        $category = new \App\Category();
+        $category->name = 'Nhạc Âu Mỹ';
+        $category->save();
+
+        $category = new \App\Category();
+        $category->name = 'Nhạc Hàn';
+        $category->save();
     }
 }
