@@ -6,6 +6,7 @@ use App\PlayList;
 use App\Service\PlayListServiceInterface;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class PlayListController extends Controller
 {
@@ -45,5 +46,8 @@ class PlayListController extends Controller
         $this->playlistService->edit($request , $id);
         return redirect()->route('playlist.index');
     }
-
+    public function information($id){
+        $playlist = $this->playlistService->findById($id);
+        return view('playlist.information',compact('playlist'));
+    }
 }
