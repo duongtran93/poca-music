@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Http\Requests\changepasswordRequest;
 use App\Playlist;
 use App\Http\Requests\SearchRequest;
