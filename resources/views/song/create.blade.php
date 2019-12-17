@@ -23,22 +23,27 @@
                     </div>
                     <div class="form-group">
                         <label for="song">Song</label>
-                        <input type="file" class="form-control" id="song" name="song" accept="audio/*" >
+                        <input type="file" id="song" name="song" accept="audio/*" >
                         @if($errors->has('song'))
                             <p class="text-danger">*{{$errors->first('song')}}</p>
                         @endif
                     </div>
                     <div class="form-group">
                         <label for="image">Image</label>
-                        <input type="file" class="form-control" id="image" name="image"   >
+                        <input type="file" id="image" name="image"   >
                         @if($errors->has('image'))
                             <p class="text-danger">*{{$errors->first('image')}}</p>
                         @endif
                     </div>
                     <div class="form-group">
-                        <label for="image">Category</label>
+                        <label>Category</label>
+                        <select name="category_id" class="form-control">
+                        @foreach($categories as $category)
+                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                        @endforeach
+                        </select>
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary" >Submit</button>
                     <a href="{{route('user.index')}}" class="btn btn-dark">Cancel</a>
                 </form>
             </div>
