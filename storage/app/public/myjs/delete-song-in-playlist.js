@@ -4,7 +4,9 @@ $(document).ready(function () {
         $('#messageDelete').html('');
         $.ajax(this.href, {
             success: function (data) {
-                location.reload();
+                setTimeout(function () {
+                    location.reload();
+                }, 2000);
                 $('#messageDelete').html('<span id="alert" class="alert alert-success mt-3" role="alert">Đã xóa bài hát khỏi playlist thành công</span>');
                 window.setTimeout(function () {
                     $('#alert').fadeTo(500, 0).slideUp(500, function () {

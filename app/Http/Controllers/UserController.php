@@ -47,7 +47,7 @@ class UserController extends Controller
         }
         $user->save();
 
-        return view('home');
+        return redirect()->route('home');
     }
 
     public function editpass() {
