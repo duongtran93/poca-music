@@ -36,10 +36,12 @@
                         @endif
                     </div>
                     <div class="form-group">
-                        <label for="image">Category</label>
-                        <select name="category">
-                            <option value="1" selected>Nhac tre</option>
-                            <option value="2">Nhac cai luong</option>
+                        <label>Category</label>
+                        <select name="category_id" class="form-control">
+                            <option value="" selected>Chọn Thể Loại</option>
+                        @foreach($categories as $category)
+                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                          @endforeach
                         </select>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
