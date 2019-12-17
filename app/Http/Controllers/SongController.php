@@ -71,13 +71,19 @@ class SongController extends Controller
     public function listen($id)
     {
         $song = $this->songService->findById($id);
-        return view('song.listenMusic', compact('song'));
+        return view('user.listenMusic', compact('song'));
     }
 
     public function songNew()
     {
         $songs = $this->songService->getAll();
-        return view('song.recent',compact('songs'));
+        return view('user.recent',compact('songs'));
+    }
+
+    public function listenTheMost()
+    {
+        $songs = $this->songService->getAll();
+        return view('user.HearTheMost', compact('songs'));
     }
 
 }

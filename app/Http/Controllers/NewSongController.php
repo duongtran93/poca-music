@@ -17,12 +17,18 @@ class NewSongController extends Controller
     public function songNew()
     {
         $songs = $this->songService->getAll();
-        return view('song.recent',compact('songs'));
+        return view('song.recent', compact('songs'));
     }
 
     public function listen($id)
     {
         $song = $this->songService->findById($id);
         return view('song.listenMusic', compact('song'));
+    }
+
+    public function listenTheMost()
+    {
+        $songs = $this->songService->getAll();
+        return view('song.HearTheMost', compact('songs'));
     }
 }

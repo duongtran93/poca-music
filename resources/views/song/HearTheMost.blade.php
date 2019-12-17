@@ -2,7 +2,7 @@
 @section('content')
     @include('menu')
     <div class="container">
-        <h2>Bài Hát Mới Nhất </h2>
+        <h2>Bài Hát Được Nghe Nhiều Nhất  </h2>
         <div class="row">
             @foreach($songs as $song)
                 <a href="{{route('song.listen', $song->id)}}">
@@ -19,4 +19,4 @@
     </div>
 
     @include('footer')
-    @endsection
+@endsection

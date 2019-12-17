@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    @include('menu')
+    @include('menu-user')
     <div class="poca-music-area mt-100 d-flex align-items-center flex-wrap ml-2 mr-2" data-animation="fadeInUp" data-delay="900ms">
         <div class="poca-music-thumbnail">
             <img src="{{ asset('storage/' . $song->image) }}" style="">
@@ -35,4 +35,5 @@
     </div>
 
     @include('footer')
-    @endsection
+@endsection
+

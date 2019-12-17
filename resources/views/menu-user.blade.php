@@ -26,7 +26,7 @@
                         <ul id="nav">
                             <li><a href="{{ route('home') }}">Trang Chủ</a></li>
                             <li><a href="{{route('song.songNew')}}">Bài Hát Mới Nhất </a></li>
-                            <li><a href="#">Nghe Nhiều Nhất </a></li>
+                            <li><a href="{{route('songs.listenTheMost')}}">Nghe Nhiều Nhất </a></li>
                             <li><a href="#">Nghệ Sĩ</a></li>
                         </ul>
 
