@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    @include('menu')
+    @include('menu-user')
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -21,4 +21,5 @@
     </div>
     @include('footer')
 @endsection
+
 

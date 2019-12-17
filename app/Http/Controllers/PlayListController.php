@@ -41,6 +41,11 @@ class PlayListController extends Controller
 
     }
 
+    public function deleteSongInPlaylist($playlistId, $songId) {
+        $playlist = Playlist::findOrFail($playlistId);
+        $playlist->songs()->detach($songId);
+    }
+
     public function delete($id)
     {
         $this->playlistService->delete($id);
@@ -60,6 +65,7 @@ class PlayListController extends Controller
     }
     public function information($id){
         $playlist = $this->playlistService->findById($id);
-        return view('playlist.information',compact('playlist'));
+        $songs = $playlist->songs()->get();
+        return view('playlist.information',compact('playlist', 'songs'));
     }
 }

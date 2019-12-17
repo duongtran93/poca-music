@@ -25,7 +25,7 @@ class NewSongController extends Controller
     public function listen($id)
     {
         $song = $this->songService->findById($id);
-        return view('user.listenMusic', compact('song'));
+        return view('song.listenMusic', compact('song'));
     }
 
     public function listenTheMost()

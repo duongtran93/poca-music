@@ -79,7 +79,7 @@ class SongController extends Controller
     {
         $song = $this->songService->findById($id);
         $playlists = Playlist::where('user_id', Auth::user()->id)->get();
-        return view('song.listenMusic', compact('song', 'playlists'));
+        return view('user.listenMusic', compact('song', 'playlists'));
     }
 
     public function songNew()
@@ -98,6 +98,6 @@ class SongController extends Controller
     public function search(SearchRequest $request) {
         $keyword = $request->search;
         $songs = DB::table('songs')->where('name','LIKE','%'.$keyword.'%')->get();
-        return view('song.search',compact('songs'));
+        return view('user.search',compact('songs'));
     }
 }
