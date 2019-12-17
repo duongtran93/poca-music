@@ -8,7 +8,6 @@ use App\Repository\RepositoryInterface;
 
 abstract class RepositoryEloquent implements RepositoryInterface
 {
-
     protected $model;
     public function __construct()
     {

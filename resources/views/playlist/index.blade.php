@@ -22,7 +22,7 @@
                         <div class="card h-100">
                             <img src="{{asset('storage/images/anhtaboemroi.jpeg')}}" class="card-img-top"
                                  alt="..." style="height: 230px ">
-                            <a href="#"><h5>{{$playlist->name}}</h5></a>
+                            <a href="{{route('playlist.information',$playlist->id)}}"><h5>{{$playlist->name}}</h5></a>
                             <p>Tạo bởi {{\Illuminate\Support\Facades\Auth::user()->name}}</p>
                         </div>
                     </div>

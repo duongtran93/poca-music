@@ -37,6 +37,8 @@ Route::prefix('song')->group(function () {
     Route::get('edit/{id}', 'SongController@edit')->name('song.edit');
     Route::post('edit/{id}', 'SongController@update')->name('song.update');
     Route::get('delete/{id}', 'SongController@delete')->name('song.delete');
+    Route::get('listenMusic/{id}', 'SongController@listen')->name('song.listen');
+    Route::get('search', 'SongController@search')->name('song.search');
     Route::get('listenMusic/{id}', 'SongController@listen')->name('songs.listen');
     Route::get('song-new', 'SongController@songNew')->name('song.songNew');
     Route::get('nghe-nhieu-nhat', 'SongController@listenTheMost')->name('songs.listenTheMost');
@@ -52,6 +54,7 @@ Route::prefix('playlists')->group(function (){
     Route::get('index', 'PlayListController@index')->name('playlist.index');
     Route::get('create', 'PlayListController@create')->name('playlist.create');
     Route::post('create', 'PlayListController@store')->name('playlist.store');
+    Route::get('information/{id}', 'PlayListController@information')->name('playlist.information');
     Route::get('delete/{id}', 'PlayListController@delete')->name('playlist.delete');
     Route::get('edit/{id}','PlayListController@edit')->name('playlist.edit');
     Route::post('edit/{id}','PlayListController@update')->name('playlist.update');

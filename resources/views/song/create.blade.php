@@ -35,6 +35,13 @@
                             <p class="text-danger">*{{$errors->first('image')}}</p>
                         @endif
                     </div>
+                    <div class="form-group">
+                        <label for="image">Category</label>
+                        <select name="category">
+                            <option value="1" selected>Nhac tre</option>
+                            <option value="2">Nhac cai luong</option>
+                        </select>
+                    </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                     <a href="{{route('user.index')}}" class="btn btn-dark">Cancel</a>
                 </form>
