@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 class PlayListController extends Controller
 {
     public $playlistService;
+
     public function __construct(PlayListServiceInterface $playlistService)
     {
         $this->playlistService = $playlistService;
@@ -32,9 +33,17 @@ class PlayListController extends Controller
         $this->playlistService->create($request);
         return redirect()->route('playlist.index');
     }
-//
-//    public function information($id){
-//        $playlist = PlayList::where($id)->get();
-//        return view('playlist.information');
-//    }
+
+    public function delete($id)
+    {
+        $this->playlistService->delete($id);
+        return redirect()->route('playlist.delete');
+    }
+
+    public function update(Request $request, $id)
+    {
+        $this->playlistService->edit($request , $id);
+        return redirect()->route('playlist.index');
+    }
+
 }

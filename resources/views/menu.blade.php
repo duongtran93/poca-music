@@ -26,9 +26,8 @@
                     <div class="classynav">
                         <ul id="nav">
                             <li><a href="{{ route('welcome') }}">Trang chủ</a></li>
-                            <li><a href="#">Top Hot</a></li>
-                            <li><a href="">Chủ Đề</a></li>
-                            <li><a href="">Album</a></li>
+                            <li><a href="{{route('songs.songNew')}}">Bài Hát Mới Nhất</a></li>
+                            <li><a href="{{route('song.listenTheMost')}}">Nghe Nhiều Nhất</a></li>
                             <li><a href="#">Nghệ Sĩ</a></li>
                         </ul>
 

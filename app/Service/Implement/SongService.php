@@ -75,4 +75,9 @@ class SongService implements ServiceInterface
     {
         $this->songRepository->delete($obj);
     }
+
+    function getAll()
+    {
+        return $this->songRepository->getAll();
+    }
 }

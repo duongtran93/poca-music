@@ -31,4 +31,9 @@ abstract class RepositoryEloquent implements RepositoryInterface
     {
         $obj->delete();
     }
+
+    public function getAll()
+    {
+        return $this->model->all();
+    }
 }
