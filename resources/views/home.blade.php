@@ -10,12 +10,16 @@
     <!-- Title -->
     <title>Poca - Podcast &amp; Audio</title>
 {{--    <base href="{{ asset('') }}">--}}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<!-- Favicon -->
+    <!-- Favicon -->
     <link rel="icon" href="{{ asset('storage/source/img/core-img/favicon.ico') }}">
 
     <!-- Core Stylesheet -->
     <link rel="stylesheet" href="{{ asset('storage/source/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('storage/source/css/bootstrap.min.css') }}">
+    <link href="{{ asset('storage/mycss/user-profile.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('storage/mycss/toastr.css') }}">
     <style>
         .top-social-area a {
             display: inline-block;
@@ -55,6 +59,8 @@
 <script src="{{ asset('storage/source/js/poca.bundle.js') }}"></script>
 <!-- Active js -->
 <script src="{{ asset('storage/source/js/default-assets/active.js') }}"></script>
+<script type="text/javascript" src="{{ asset('storage/myjs/show-hide-password.js') }}"></script>
+<script type="text/javascript" src="{{ asset('storage/myjs/toastr.js') }}"></script>
 
 </body>
 

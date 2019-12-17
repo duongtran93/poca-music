@@ -4,14 +4,14 @@
 namespace App\Repository\Eloquent;
 
 
-use App\PlayList;
+use App\Playlist;
 use App\Repository\PlayListRepositoryInterface;
 
 class PlayListEloquentRepository implements PlayListRepositoryInterface
 {
     protected $playlist;
 
-    public function __construct( PlayList $playlist)
+    public function __construct(Playlist $playlist)
     {
         $this->playlist = $playlist;
     }
