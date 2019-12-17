@@ -33,7 +33,7 @@ class PlayListEloquentRepository implements PlayListRepositoryInterface
 
     function destroy($obj)
     {
-        return $obj->delete;
+        return $obj->delete();
     }
 
     function update($obj)

@@ -44,7 +44,13 @@ class PlayListController extends Controller
     public function delete($id)
     {
         $this->playlistService->delete($id);
-        return redirect()->route('playlist.delete');
+        return redirect()->route('playlist.index');
+    }
+
+    public function edit($id)
+    {
+        $playlist = $this->playlistService->findById($id);
+        return view('playlist.information', compact('playlist'));
     }
 
     public function update(Request $request, $id)
