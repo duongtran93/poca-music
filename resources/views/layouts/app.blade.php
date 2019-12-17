@@ -63,6 +63,7 @@
 <script type="text/javascript" src="{{ asset('storage/myjs/show-hide-password.js') }}"></script>
 <script type="text/javascript" src="{{ asset('storage/myjs/toastr.js') }}"></script>
 <script type="text/javascript" src="{{ asset('storage/myjs/add-song-to-playlist.js') }}"></script>
+<script type="text/javascript" src="{{ asset('storage/myjs/delete-song-in-playlist.js') }}"></script>
 <script src="{{ asset('storage/Login/vendor/animsition/js/animsition.min.js') }}"></script>
 <script src="{{ asset('storage/Login/vendor/select2/select2.min.js') }}"></script>
 <script src="{{ asset('storage/Login/vendor/daterangepicker/moment.min.js') }}"></script>

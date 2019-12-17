@@ -29,7 +29,34 @@
                 </div>
             </div>
             <div class="col-8" style="height: auto">
-                <h1>list song</h1>
+                <h1>List Song</h1>
+                <table class="table table-bordered">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">STT</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Image</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach($songs as $key => $song)
+                        <tr>
+                            <th scope="row">{{++ $key}}</th>
+                            <td><a href="{{route('songs.listen', $song->id)}}">{{$song->name}}</a> <span class="badge badge-info">{{$song->category['name']}}</span></td>
+                            <td>{!! $song->desc !!}</td>
+                            <td><img src="{{asset('storage/'. $song->image)}}" style="width: 80px "></td>
+                            <td>
+                                <a class="deleteSongInPlaylist" href="{{route('playlist.deleteSong', ['playlist_id'=>$playlist->id, 'song_id'=>$song->id])}}">
+                                    <button class="btn btn-danger">Delete</button>
+                                </a>
+                            </td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+                <div id="messageDelete" class="text-center"></div>
             </div>
         </div>
     </div>
