@@ -22,7 +22,7 @@
                         <div class="card h-100">
                             <img src="{{asset('storage/images/anhtaboemroi.jpeg')}}" class="card-img-top"
                                  alt="..." style="height: 230px ">
-                            <a href="#"><h5>{{$playlist->name}}</h5></a>
+                            <a href="{{route('playlist.information',$playlist->id)}}"><h5>{{$playlist->name}}</h5></a>
                             <p>Tạo bởi {{\Illuminate\Support\Facades\Auth::user()->name}}</p>
                         </div>
                     </div>
@@ -40,7 +40,7 @@
                         @csrf
                         <h2 class="text-center">Tạo playlist mới</h2>
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Nhập tên playlist" autofocus name="name">
+                            <input type="text" class="form-control" placeholder="Nhập tên playlist" autofocus name="name" >
                         </div>
                         <div class="form-group">
                             <button type="submit" class="btn btn-success btn-block playlist-btn mt-2">Lưu</button>
@@ -50,7 +50,6 @@
             </div>
         </div>
     </div>
-
     @include('footer')
 @endsection
 

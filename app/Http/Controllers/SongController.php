@@ -2,12 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Http\Requests\EditSongRequest;
+use App\Http\Requests\SearchRequest;
 use App\Http\Requests\SongRequest;
 use App\Playlist;
 use App\Service\Implement\SongService;
+use App\Song;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
 class SongController extends Controller
@@ -17,12 +21,12 @@ class SongController extends Controller
     public function __construct(SongService $songService)
     {
         $this->songService = $songService;
-        $this->middleware('auth');
     }
 
     public function create()
     {
-        return view('song.create');
+        $categories = Category::all();
+        return view('song.create',compact('categories'));
     }
 
     public function store(SongRequest $request)
@@ -77,4 +81,22 @@ class SongController extends Controller
         return view('song.listenMusic', compact('song', 'playlists'));
     }
 
+    public function songNew()
+    {
+        $songs = $this->songService->getAll();
+        return view('user.recent',compact('songs'));
+    }
+
+    public function listenTheMost()
+    {
+        $songs = $this->songService->getAll();
+        return view('user.HearTheMost', compact('songs'));
+    }
+
+
+    public function search(SearchRequest $request) {
+        $keyword = $request->search;
+        $songs = DB::table('songs')->where('name','LIKE','%'.$keyword.'%')->get();
+        return view('song.search',compact('songs'));
+    }
 }

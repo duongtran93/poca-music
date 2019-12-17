@@ -8,7 +8,6 @@ use App\Repository\RepositoryInterface;
 
 abstract class RepositoryEloquent implements RepositoryInterface
 {
-
     protected $model;
     public function __construct()
     {
@@ -31,5 +30,10 @@ abstract class RepositoryEloquent implements RepositoryInterface
     public function delete($obj)
     {
         $obj->delete();
+    }
+
+    public function getAll()
+    {
+        return $this->model->all();
     }
 }

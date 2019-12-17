@@ -30,4 +30,14 @@ class PlayListEloquentRepository implements PlayListRepositoryInterface
     {
         return $obj->save();
     }
+
+    function destroy($obj)
+    {
+        return $obj->delete;
+    }
+
+    function update($obj)
+    {
+        return $obj->save();
+    }
 }
