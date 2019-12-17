@@ -48,6 +48,7 @@ Route::prefix('songs')->group(function (){
     Route::get('song-new', 'NewSongController@songNew')->name('songs.songNew');
     Route::get('listenMusic/{id}', 'NewSongController@listen')->name('song.listen');
     Route::get('nghe-nhieu-nhat', 'NewSongController@listenTheMost')->name('song.listenTheMost');
+    Route::get('search', 'NewSongController@search')->name('songs.search');
 });
 
 Route::prefix('playlists')->group(function (){

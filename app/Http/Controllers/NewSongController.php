@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SearchRequest;
 use App\Service\Implement\SongService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class NewSongController extends Controller
 {
@@ -30,5 +32,11 @@ class NewSongController extends Controller
     {
         $songs = $this->songService->getAll();
         return view('song.HearTheMost', compact('songs'));
+    }
+
+    public function search(SearchRequest $request) {
+        $keyword = $request->search;
+        $songs = DB::table('songs')->where('name','LIKE','%'.$keyword.'%')->get();
+        return view('song.search',compact('songs'));
     }
 }

@@ -21,6 +21,7 @@ class SongController extends Controller
     public function __construct(SongService $songService)
     {
         $this->songService = $songService;
+        $this->middleware('auth');
     }
 
     public function create()
@@ -97,6 +98,6 @@ class SongController extends Controller
     public function search(SearchRequest $request) {
         $keyword = $request->search;
         $songs = DB::table('songs')->where('name','LIKE','%'.$keyword.'%')->get();
-        return view('song.search',compact('songs'));
+        return view('user.search',compact('songs'));
     }
 }

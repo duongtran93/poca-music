@@ -43,7 +43,7 @@
                         @endforeach
                         </select>
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary" >Submit</button>
                     <a href="{{route('user.index')}}" class="btn btn-dark">Cancel</a>
                 </form>
             </div>
