@@ -38,10 +38,13 @@ Route::prefix('song')->group(function () {
     Route::post('edit/{id}', 'SongController@update')->name('song.update');
     Route::get('delete/{id}', 'SongController@delete')->name('song.delete');
     Route::get('listenMusic/{id}', 'SongController@listen')->name('song.listen');
+    Route::get('search', 'SongController@search')->name('song.search');
 });
 
 Route::prefix('playlists')->group(function (){
     Route::get('index', 'PlayListController@index')->name('playlist.index');
     Route::get('create', 'PlayListController@create')->name('playlist.create');
     Route::post('create', 'PlayListController@store')->name('playlist.store');
+    Route::get('information/{id}', 'PlayListController@information')->name('playlist.information');
+
 });

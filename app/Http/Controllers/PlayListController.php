@@ -32,4 +32,9 @@ class PlayListController extends Controller
         $this->playlistService->create($request);
         return redirect()->route('playlist.index');
     }
+//
+//    public function information($id){
+//        $playlist = PlayList::where($id)->get();
+//        return view('playlist.information');
+//    }
 }

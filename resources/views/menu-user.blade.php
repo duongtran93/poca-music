@@ -33,8 +33,9 @@
 
                         <!-- Top Search Area -->
                         <div class="top-search-area">
-                            <form action="" method="post">
-                                <input type="search" name="top-search-bar" class="form-control" placeholder="Search and hit enter...">
+                            <form action="{{route('song.search')}}" method="get">
+                                @csrf
+                                <input type="search" name="search" class="form-control" placeholder="Search and hit enter...">
                                 <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
                             </form>
                         </div>

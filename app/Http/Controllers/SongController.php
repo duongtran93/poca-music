@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\EditSongRequest;
+use App\Http\Requests\SearchRequest;
 use App\Http\Requests\SongRequest;
 use App\Service\Implement\SongService;
+use App\Song;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
 class SongController extends Controller
@@ -15,7 +18,6 @@ class SongController extends Controller
     public function __construct(SongService $songService)
     {
         $this->songService = $songService;
-        $this->middleware('auth');
     }
 
     public function create()
@@ -74,4 +76,10 @@ class SongController extends Controller
         return view('song.listenMusic', compact('song'));
     }
 
+
+    public function search(SearchRequest $request) {
+        $keyword = $request->search;
+        $songs = DB::table('songs')->where('name','LIKE','%'.$keyword.'%')->get();
+        return view('song.search',compact('songs'));
+    }
 }

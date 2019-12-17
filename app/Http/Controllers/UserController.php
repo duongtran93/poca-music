@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\changepasswordRequest;
+use App\Http\Requests\SearchRequest;
 use App\PlayList;
 use App\Song;
 use App\User;
@@ -22,7 +23,7 @@ class UserController extends Controller
 
     public function index() {
         $songs = Song::where('user_id', Auth::user()->id)->get();
-        return view('user.index', compact('songs', 'playlists'));
+        return view('user.index', compact('songs'));
     }
 
     public function edit($id) {

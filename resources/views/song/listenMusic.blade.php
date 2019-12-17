@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
     @include('menu-user')
+    <div class="container">
     <div class="poca-music-area mt-100 d-flex align-items-center flex-wrap ml-2 mr-2" data-animation="fadeInUp" data-delay="900ms">
         <div class="poca-music-thumbnail">
             <img src="{{ asset('storage/' . $song->image) }}" style="">
@@ -28,11 +29,13 @@
     <div class="container mt-40">
         <div class="row">
             <div>
-                <h3>Lời Bài Hát :</h3><br>
+                <h3 style="color: white">Lời Bài Hát :</h3>
+                <br>
                 {!! $song->desc !!}
+
             </div>
         </div>
     </div>
-
+    </div>
     @include('footer')
     @endsection
