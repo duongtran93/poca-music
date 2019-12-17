@@ -20,7 +20,9 @@
                                     </button>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                                         <button class="dropdown-item" type="button" data-toggle="modal" data-target="#playlistModal">Edit</button>
+                                        <a href="{{route('playlist.delete', $playlist->id)}}" onclick="return confirm('Bạn có chắc chắn muốn xóa?')">
                                         <button class="dropdown-item" type="button">Delete</button>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -38,11 +40,11 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="playlist-form">
-                    <form action="#" method="post">
+                    <form action="{{route('playlist.update', $playlist->id)}}" method="post">
                         @csrf
                         <h2 class="text-center">Thay đổi tên Playlist</h2>
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Nhập tên playlist" autofocus name="name" >
+                            <input type="text" class="form-control" placeholder="Nhập tên playlist" autofocus name="name" value="{{$playlist->name}}" >
                         </div>
                         <div class="form-group">
                             <button type="submit" class="btn btn-success btn-block playlist-btn mt-2">Lưu</button>
