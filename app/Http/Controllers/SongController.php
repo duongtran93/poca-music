@@ -78,7 +78,7 @@ class SongController extends Controller
     {
         $song = $this->songService->findById($id);
         $playlists = Playlist::where('user_id', Auth::user()->id)->get();
-        return view('song.listenMusic', compact('song', 'playlists'));
+        return view('user.listenMusic', compact('song', 'playlists'));
     }
 
     public function songNew()

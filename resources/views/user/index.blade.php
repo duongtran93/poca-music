@@ -38,8 +38,8 @@
                     @foreach($songs as $key => $song)
                         <tr>
                             <th scope="row">{{++ $key}}</th>
-                            <td><a href="{{route('songs.listen', $song->id)}}">{{$song->name}}</a> <span class="badge badge-info">{{$song->category->name}}</span></td>
-                            <td>{!! $song->desc !!}</td>
+                            <td><a href="{{route('songs.listen', $song->id)}}">{{$song->name}}</a> <span class="badge badge-info">{{$song->category['name']}}</span></td>
+                           <td>{!! $song->desc !!}</td>
                             <td><img src="{{asset('storage/'. $song->image)}}" style="width: 80px "></td>
                             <td>
                                 <a href="{{route('song.edit', $song->id)}}"><button class="btn btn-success">Edit</button></a>
