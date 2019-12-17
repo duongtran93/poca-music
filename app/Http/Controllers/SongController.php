@@ -74,4 +74,10 @@ class SongController extends Controller
         return view('song.listenMusic', compact('song'));
     }
 
+    public function songNew()
+    {
+        $songs = $this->songService->getAll();
+        return view('song.recent',compact('songs'));
+    }
+
 }
