@@ -37,4 +37,16 @@ class PlayListService implements PlayListServiceInterface
         return $this->playlistRepository->store($playlist);
     }
 
+    public function delete($id)
+    {
+        $playlist = $this->playlistRepository->finById($id);
+        return $this->playlistRepository->destroy($playlist);
+    }
+
+    public function edit($request, $id)
+    {
+        $playlist = $this->playlistRepository->finById($id);
+        $playlist->name = $request->name;
+        return $this->playlistRepository->update($playlist);
+    }
 }

@@ -10,4 +10,5 @@ interface ServiceInterface
     function findById($id);
     function update($request, $id);
     function delete($obj);
+    function getAll();
 }
