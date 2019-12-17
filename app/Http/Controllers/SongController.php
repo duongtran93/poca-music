@@ -6,9 +6,11 @@ use App\Category;
 use App\Http\Requests\EditSongRequest;
 use App\Http\Requests\SearchRequest;
 use App\Http\Requests\SongRequest;
+use App\Playlist;
 use App\Service\Implement\SongService;
 use App\Song;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
@@ -75,7 +77,8 @@ class SongController extends Controller
     public function listen($id)
     {
         $song = $this->songService->findById($id);
-        return view('user.listenMusic', compact('song'));
+        $playlists = Playlist::where('user_id', Auth::user()->id)->get();
+        return view('song.listenMusic', compact('song', 'playlists'));
     }
 
     public function songNew()
