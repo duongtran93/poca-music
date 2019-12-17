@@ -37,6 +37,7 @@ class SongService implements ServiceInterface
             $newSong->image = $path;
         }
         $newSong->user_id = Auth::user()->id;
+        $newSong->category_id = $request->category;
         $this->songRepository->save($newSong);
     }
     public function findById($id)

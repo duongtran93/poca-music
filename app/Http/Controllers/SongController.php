@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Http\Requests\EditSongRequest;
 use App\Http\Requests\SearchRequest;
 use App\Http\Requests\SongRequest;
@@ -22,7 +23,8 @@ class SongController extends Controller
 
     public function create()
     {
-        return view('song.create');
+        $categories = Category::all();
+        return view('song.create',compact('categories'));
     }
 
     public function store(SongRequest $request)
