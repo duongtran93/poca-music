@@ -44,4 +44,5 @@ Route::prefix('playlists')->group(function (){
     Route::get('index', 'PlayListController@index')->name('playlist.index');
     Route::get('create', 'PlayListController@create')->name('playlist.create');
     Route::post('create', 'PlayListController@store')->name('playlist.store');
+    Route::get('addSong/{playlist_id}/{song_id}', 'PlayListController@addSongToPlaylist')->name('playlist.addSong');
 });

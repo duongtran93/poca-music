@@ -4,7 +4,7 @@
 namespace App\Service\Implement;
 
 
-use App\PlayList;
+use App\Playlist;
 use App\Repository\PlayListRepositoryInterface;
 use App\Service\PlayListServiceInterface;
 use Illuminate\Support\Facades\Auth;
@@ -30,7 +30,7 @@ class PlayListService implements PlayListServiceInterface
 
     public function create($request)
     {
-        $playlist = new PlayList();
+        $playlist = new Playlist();
 
         $playlist->name = $request->name;
         $playlist->user_id = Auth::user()->id;

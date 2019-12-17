@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\PlayList;
+use App\Playlist;
 use App\Service\PlayListServiceInterface;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -18,7 +18,7 @@ class PlayListController extends Controller
 
     public function index()
     {
-        $playlists = PlayList::where('user_id', Auth::user()->id)->get();
+        $playlists = Playlist::where('user_id', Auth::user()->id)->get();
         return view('playlist.index', compact('playlists'));
     }
 
@@ -30,6 +30,12 @@ class PlayListController extends Controller
     public function store(Request $request)
     {
         $this->playlistService->create($request);
-        return redirect()->route('playlist.index');
+        return back();
+    }
+
+    public function addSongToPlaylist($playlistId, $songId) {
+        $playlist = Playlist::findOrFail($playlistId);
+        $playlist->songs()->attach($songId);
+
     }
 }

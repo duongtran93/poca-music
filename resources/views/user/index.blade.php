@@ -43,7 +43,7 @@
                             <td><img src="{{asset('storage/'. $song->image)}}" style="width: 80px "></td>
                             <td>
                                 <a href="{{route('song.edit', $song->id)}}"><button class="btn btn-success">Edit</button></a>
-                                <a href="{{route('song.delete', $song->id)}}" onclick="return confirm('xoa khong?')">
+                                <a href="{{route('song.delete', $song->id)}}" onclick="return confirm('Bạn có chắc chắn muốn xóa?')">
                                     <button class="btn btn-danger">Delete</button>
                                 </a>
                             </td>

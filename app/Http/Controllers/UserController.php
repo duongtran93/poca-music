@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\changepasswordRequest;
-use App\PlayList;
+use App\Playlist;
 use App\Song;
 use App\User;
 use Illuminate\Http\Request;

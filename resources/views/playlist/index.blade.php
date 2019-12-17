@@ -7,7 +7,7 @@
                 <h2>Playlist</h2>
                 <div class="row row-cols-1 row-cols-md-3">
                     <div class="col-3 mt-lg-4">
-                        <a data-toggle="modal" data-target="#playlistModal">
+                        <a data-toggle="modal" data-target="#playlistModal" style="cursor: pointer">
                             <div class="card card-body h-100 d-flex justify-content-center add"
                                  style="background-color: darkmagenta;">
                                 <div>

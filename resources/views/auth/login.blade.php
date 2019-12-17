@@ -26,6 +26,7 @@
                     <span class="focus-input100"></span>
                     <span class="label-input100">Password</span>
                 </div>
+                <span id="toggle-password" toggle="#password-field" class="fa fa-fw fa-eye field_icon" style="position: relative"></span>
                 @error('password')
                     <strong class="text-danger">* {{ $message }}</strong>
                 @enderror
