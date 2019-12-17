@@ -37,11 +37,6 @@
                     </div>
                     <div class="form-group">
                         <label for="image">Category</label>
-                        <select name="category">
-                            <option value="" selected>Chọn thể loại</option>
-                            <option value="1">Nhac tre</option>
-                            <option value="2">Nhac cai luong</option>
-                        </select>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                     <a href="{{route('user.index')}}" class="btn btn-dark">Cancel</a>
