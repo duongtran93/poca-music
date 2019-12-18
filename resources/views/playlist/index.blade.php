@@ -18,6 +18,7 @@
                         </a>
                     </div>
                     @foreach($playlists as $playlist )
+                        <a href="{{route('playlist.information',$playlist->id)}}">
                     <div class="col-3 mt-lg-4">
                         <div class="card h-100">
                             <img src="{{asset('storage/images/anhtaboemroi.jpeg')}}" class="card-img-top"
@@ -26,6 +27,7 @@
                             <p>Tạo bởi {{\Illuminate\Support\Facades\Auth::user()->name}}</p>
                         </div>
                     </div>
+                        </a>
                     @endforeach
                 </div>
             </div>
@@ -40,7 +42,7 @@
                         @csrf
                         <h2 class="text-center">Tạo playlist mới</h2>
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Nhập tên playlist" autofocus name="name" >
+                            <input type="text" class="form-control" placeholder="Nhập tên playlist" autofocus name="name" required >
                         </div>
                         <div class="form-group">
                             <button type="submit" class="btn btn-success btn-block playlist-btn mt-2">Lưu</button>
