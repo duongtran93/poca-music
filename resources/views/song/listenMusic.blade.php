@@ -9,7 +9,7 @@
             </div>
             <div class="poca-music-content">
                 <span class="music-published-date">December 9, 2019</span>
-                <h2>{{$song->name}}</h2>
+                <h2 style="color: black">{{$song->name}}</h2>
                 <div class="music-meta-data">
                     <p>By <a href="#" class="music-author">Admin</a> | <a href="#" class="music-catagory">Tutorials</a>
                         | <a href="#" class="music-duration">00:04:06</a></p>
