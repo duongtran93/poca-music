@@ -1,7 +1,6 @@
 @extends('layouts.app')
 @section('content')
     @include('menu-user')
-    <div class="container">
         @include('menu')
         <div class="poca-music-area mt-100 d-flex align-items-center flex-wrap ml-2 mr-2" data-animation="fadeInUp"
              data-delay="900ms">
@@ -29,8 +28,7 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="container mt-40">
+    <div class="container mt-4">
         <div class="row">
             <div>
                 <h3>Lời Bài Hát :</h3><br>
