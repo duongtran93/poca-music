@@ -61,7 +61,7 @@ class PlayListController extends Controller
     public function update(Request $request, $id)
     {
         $this->playlistService->edit($request , $id);
-        return redirect()->route('playlist.index');
+        return back();
     }
     public function information($id){
         $playlist = $this->playlistService->findById($id);
