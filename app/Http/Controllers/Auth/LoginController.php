@@ -25,7 +25,11 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    public function redirectTo() {
+        toastr()->success('Đăng nhập thành công!');
+        return '/home';
+    }
+//    protected $redirectTo = '/home';
 
     /**
      * Create a new controller instance.

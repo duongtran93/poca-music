@@ -9,6 +9,7 @@
 
     <!-- Title -->
     <title>Poca - Podcast &amp; Audio</title>
+    @toastr_css
 {{--    <base href="{{ asset('') }}">--}}
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -33,11 +34,11 @@
 
 <body>
 <!-- Preloader -->
-<div id="preloader">
-    <div class="preloader-thumbnail">
-        <img src="{{ asset('storage/source/img/core-img/preloader.png') }}" alt="">
-    </div>
-</div>
+{{--<div id="preloader">--}}
+{{--    <div class="preloader-thumbnail">--}}
+{{--        <img src="{{ asset('storage/source/img/core-img/preloader.png') }}" alt="">--}}
+{{--    </div>--}}
+{{--</div>--}}
 
 <!-- ***** Header Area Start ***** -->
 @include('menu-user')<!-- ***** Header Area End ***** -->
@@ -49,7 +50,8 @@
 
 @include('footer')
 <!-- ******* All JS ******* -->
-<!-- jQuery js -->
+
+<!-- jQuery js -->--}}
 <script src="{{ asset('storage/source/js/jquery.min.js') }}"></script>
 <!-- Popper js -->
 <script src="{{ asset('storage/source/js/popper.min.js') }}"></script>
@@ -60,8 +62,13 @@
 <!-- Active js -->
 <script src="{{ asset('storage/source/js/default-assets/active.js') }}"></script>
 <script type="text/javascript" src="{{ asset('storage/myjs/show-hide-password.js') }}"></script>
-<script type="text/javascript" src="{{ asset('storage/myjs/toastr.js') }}"></script>
+{{--<script type="text/javascript" src="{{ asset('storage/myjs/toastr.js') }}"></script>--}}
+
 
 </body>
+@jquery
+@toastr_js
+@toastr_render
+
 
 </html>
