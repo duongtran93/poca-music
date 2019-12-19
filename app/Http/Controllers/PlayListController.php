@@ -15,8 +15,8 @@ class PlayListController extends Controller
     public function __construct(PlayListServiceInterface $playlistService)
     {
         $this->playlistService = $playlistService;
+        $this->middleware('auth');
     }
-
 
     public function index()
     {

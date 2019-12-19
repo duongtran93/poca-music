@@ -60,41 +60,36 @@ html,body{
     height: auto;
     margin: 10px;
     width: 500px;
-    background-color: rgba(0,0,0,0.5) !important;
+    background-color: silver!important;
 }
 .card-changer-pass{
     height: auto;
     margin: 10px;
     width: 500px;
-    background-color: rgba(0,0,0,0.5) !important;
+    background-color: silver !important;
+}
+
+.card-header{
+    background: #2b303b;
+}
+
+.card-changer-pass h6{
+    color: white;
 }
 
 .card-header h3{
     color: white;
 }
 
-.card-edit-profile .input-group-prepend span{
-    width: 100px;
-    background-color: #FFC312;
-    color: black;
-    border:0 !important;
-}
-.card-changer-pass .input-group-prepend span{
-    width: 170px;
-    background-color: #FFC312;
-    color: black;
-    border:0 !important;
-}
-
 .update_btn{
-    color: black;
-    background-color: forestgreen;
+    color: white;
+    background-color: black;
     width: 150px;
 }
 
 .update_btn:hover{
-    color: black;
-    background-color: yellow;
+    color: white;
+    background-color: forestgreen;
 }
 
 
