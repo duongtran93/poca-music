@@ -26,14 +26,14 @@
                     <div class="classynav">
                         <ul id="nav">
                             <li><a href="{{ route('welcome') }}">Trang chủ</a></li>
-                            <li><a href="{{route('songs.songNew')}}">Bài Hát Mới Nhất</a></li>
+                            <li><a href="{{route('song.songNew')}}">Bài Hát Mới Nhất</a></li>
                             <li><a href="{{route('song.listenTheMost')}}">Nghe Nhiều Nhất</a></li>
                             <li><a href="#">Nghệ Sĩ</a></li>
                         </ul>
 
                         <!-- Top Search Area -->
                         <div class="top-search-area">
-                            <form action="{{route('songs.search')}}" method="get">
+                            <form action="{{route('song.search')}}" method="get">
                                 @csrf
                                 <input type="text" name="search" class="form-control" placeholder="Search and hit enter...">
                                 <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
