@@ -10,35 +10,26 @@
                 <div class="card-body">
                     <form method="post" action="{{route('user.update', $user->id)}}" enctype="multipart/form-data">
                         @csrf
-                        <div class="input-group form-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">Name</span>
-                            </div>
-                            <input type="text" class="form-control" name="name" value="{{$user->name}}">
+                        <h6 class="mb-2">Name</h6>
+                        <div class="form-control mb-4">
+                            <input type="text" name="name" value="{{$user->name}}">
                         </div>
-                        <div class="input-group form-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">Email</span>
-                            </div>
-                            <input type="email" class="form-control" name="email" value="{{$user->email}}" disabled>
+                        <h6 class="mt-4 mb-2">Email</h6>
+                        <div class="form-control  mb-4">
+                            <input type="text" name="email" value="{{$user->email}}" disabled>
                         </div>
-                        <div class="input-group form-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">Phone</span>
-                            </div>
-                            <input type="text" class="form-control" name="phone" value="{{$user->phone}}">
+                        <h6 class="mt-4 mb-2">Phone</h6>
+                        <div class="form-control  mb-4">
+                            <input type="text" name="phone" value="{{$user->phone}}">
                         </div>
-                        <div class="input-group form-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">Address</span>
-                            </div>
-                            <input type="text" class="form-control" name="address" value="{{$user->address}}">
+                        <h6 class="mt-4 mb-2">Address</h6>
+                        <div class="form-control  mb-4">
+                            <input type="text" name="address" value="{{$user->address}}">
                         </div>
-                        <div class="input-group form-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">Avatar</span>
-                            </div>
-                            <input type="file" class="form-control" name="avatar">
+                        <h6 class="mt-4 mb-2">Avatar</h6>
+                        <div class="  mb-4">
+                            <img src="{{asset('storage/avatar/'.$user->avatar)}}" style="width: 50px;height: 50px">
+                            <input type="file" name="avatar">
                         </div>
                         <div class="form-group d-flex justify-content-center">
                             <button type="submit" class="btn update_btn ">Lưu thông tin</button>
