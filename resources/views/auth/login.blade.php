@@ -10,23 +10,18 @@
 					<span class="login100-form-title p-b-43">
 						Login
 					</span>
-
-
-                <div class="wrap-input100 validate-input" data-validate = "Email is required">
-                    <input class="input100 @error('email') is-invalid @enderror" id="email" type="email" name="email" value="{{ old('email') }}"  autocomplete="email" autofocus>
-                    <span class="focus-input100"></span>
-                    <span class="label-input100">Email</span>
+                <h6 class="mb-2">Email</h6>
+                <div class="form-control">
+                    <input type="email" name="email">
                 </div>
                 @error('email')
                     <strong class="text-danger">* {{ $message }}</strong>
                 @enderror
-
-                <div class="wrap-input100 validate-input" data-validate="Password is required">
-                    <input class="input100 @error('password') is-invalid @enderror" id="password" type="password" name="password"  autocomplete="current-password">
-                    <span class="focus-input100"></span>
-                    <span class="label-input100">Password</span>
+                <h6 class="mt-4 mb-2">Password</h6>
+                <div class="form-control mb-4">
+                    <input type="password" name="password"  id="password">
+                    <span id="toggle-password" toggle="#password-field" class="fa fa-fw fa-eye field_icon" style="position: relative;float: right"></span>
                 </div>
-                <span id="toggle-password" toggle="#password-field" class="fa fa-fw fa-eye field_icon" style="position: relative"></span>
                 @error('password')
                     <strong class="text-danger">* {{ $message }}</strong>
                 @enderror
