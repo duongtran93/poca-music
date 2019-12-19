@@ -41,7 +41,7 @@
                             <input type="file" class="form-control" name="avatar">
                         </div>
                         <div class="form-group d-flex justify-content-center">
-                            <button type="submit" class="btn update_btn ">Lưu thông tin</button>
+                            <button id="update-profile" type="submit" class="btn update_btn ">Lưu thông tin</button>
                         </div>
                     </form>
                 </div>
