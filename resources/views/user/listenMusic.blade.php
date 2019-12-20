@@ -3,7 +3,7 @@
     @include('menu-user')
     <div class="poca-music-area mt-100 d-flex align-items-center flex-wrap ml-2 mr-2" data-animation="fadeInUp" data-delay="900ms">
         <div class="poca-music-thumbnail">
-            <img src="{{ asset('storage/' . $song->image) }}" style="">
+            <img src="{{ asset('storage/' . $song->image) }}" style="width: 100%;height: 200px">
         </div>
         <div class="poca-music-content">
             <span class="music-published-date">December 9, 2019</span>
