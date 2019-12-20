@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Http\Requests\changepasswordRequest;
+use App\Http\Requests\EditInformationUserRequest;
 use App\Playlist;
 use App\Http\Requests\SearchRequest;
 use App\Song;
@@ -35,7 +36,7 @@ class UserController extends Controller
         return view('user.edit', compact('user'));
     }
 
-    public function update(Request $request, $id)
+    public function update(EditInformationUserRequest $request, $id)
     {
         $user = User::findOrFail($id);
         $user->name = $request->name;
