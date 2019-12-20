@@ -3,7 +3,7 @@
     @include('menu-user')
     <div class="container mt-100">
         <div class="card">
-            <h5 class="card-header">Create Song</h5>
+            <h5 class="card-header" style="color: white">Create Song</h5>
             <div class="card-body">
                 <form method="post" action="{{route('song.store')}}" enctype="multipart/form-data">
                     @csrf

@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CreateSingerRequest;
 use App\Service\SingerServiceInterface;
 use App\Singer;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 class SingerController extends Controller
 {
@@ -13,6 +13,7 @@ class SingerController extends Controller
     public function __construct(SingerServiceInterface $singerService)
     {
         $this->singerService = $singerService;
+        $this->middleware('auth');
     }
 
     public function index()
@@ -26,7 +27,7 @@ class SingerController extends Controller
         return view('singer.create');
     }
 
-    public function store(Request $request)
+    public function store(CreateSingerRequest $request)
     {
         if (Singer::where('name', '=', $request->name)->exists()) {
             $request->session()->flash('error','Ca sĩ đã tồn tại!');

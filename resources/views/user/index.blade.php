@@ -22,7 +22,7 @@
     </div>
     <div class="container">
         <div class="card mt-5">
-            <h5 class="card-header">Song List</h5>
+            <h5 class="card-header" style="color: white">Song List</h5>
             <div class="card-body">
                 <table class="table table-bordered">
                     <thead class="thead-dark">
