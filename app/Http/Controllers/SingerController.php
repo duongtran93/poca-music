@@ -31,9 +31,10 @@ class SingerController extends Controller
     {
         if (Singer::where('name', '=', $request->name)->exists()) {
             $request->session()->flash('error','Ca sĩ đã tồn tại!');
+            return back();
         } else {
             $this->singerService->create($request);
+            return redirect()->route('singer.index');
         }
-         return redirect()->route('singer.index');
     }
 }
