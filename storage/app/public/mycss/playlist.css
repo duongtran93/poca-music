@@ -1,29 +1,26 @@
 
-
- .add{
+.add {
     text-align: center;
 }
 
- .add img {
+.add img {
     width: 60px;
     height: 60px;
     text-align: center;
-}
-
- card{
-    margin-top: 10px;
 }
 
 .playlist-form {
     width: 340px;
     margin: 30px auto;
 }
+
 .playlist-form form {
     margin-bottom: 15px;
     background: #f7f7f7;
     box-shadow: 0px 2px 2px black;
     padding: 30px;
 }
+
 .playlist-form h2 {
     margin: 0 0 15px;
     color: black;
