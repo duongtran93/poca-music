@@ -10,7 +10,7 @@
                         <div class="col-3 mt-lg-4">
                             <div class="card h-100">
                                 <img src="{{asset('storage/'.$song->image)}}" class="card-img-top"
-                                     alt="..." style="height: 230px ">
+                                     alt="..." style="width: 100%;height: 200px;border-radius: 50%">
                                 <a href="{{route('songs.listen',$song->id)}}"><h5>{{$song->name}}</h5></a>
                             </div>
                         </div>

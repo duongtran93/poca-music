@@ -59,6 +59,11 @@ html,body{
 .card {
     background-color: #f9f9f9;
     border: none;
+    padding: 25px;
+}
+
+.card img{
+    margin-bottom: 20px;
 }
 
 .card-edit-profile{
