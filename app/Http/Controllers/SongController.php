@@ -99,6 +99,6 @@ class SongController extends Controller
     public function search(SearchRequest $request) {
         $keyword = $request->search;
         $songs = DB::table('songs')->where('name','LIKE','%'.$keyword.'%')->get();
-        return view('user.search',compact('songs'));
+        return view('user.search',compact('songs','playlists'));
     }
 }

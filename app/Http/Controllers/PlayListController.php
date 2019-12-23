@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SearchRequest;
 use App\Playlist;
 use App\Service\PlayListServiceInterface;
 use Illuminate\Http\Request;
@@ -67,5 +68,11 @@ class PlayListController extends Controller
         $playlist = $this->playlistService->findById($id);
         $songs = $playlist->songs()->get();
         return view('playlist.information',compact('playlist', 'songs'));
+    }
+
+    public function search(SearchRequest $request) {
+        $keyword = $request->search;
+        $playlists = DB::table('playlists ')->where('name','LIKE','%'.$keyword.'%')->get();
+        return view('song.search',compact('playlists'));
     }
 }

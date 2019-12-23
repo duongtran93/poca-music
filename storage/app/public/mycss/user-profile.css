@@ -44,7 +44,7 @@
 }
 
 html,body{
-    background: gainsboro;
+    background: white;
     background-size: cover;
     background-repeat: no-repeat;
     height: auto!important;
@@ -54,6 +54,10 @@ html,body{
 .container{
     height: 100%;
     align-content: center;
+}
+
+.card {
+    background-color: #f2f4f9;
 }
 
 .card-edit-profile{
@@ -73,9 +77,6 @@ html,body{
     background: #2b303b;
 }
 
-.card-changer-pass h6{
-    color: white;
-}
 
 .card-header h3{
     color: white;
