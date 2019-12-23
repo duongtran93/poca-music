@@ -32,6 +32,7 @@ class PlayListController extends Controller
     public function store(Request $request)
     {
         $this->playlistService->create($request);
+        toastr()->success('Tạo mới thành công!');
         return back();
     }
 
@@ -49,6 +50,7 @@ class PlayListController extends Controller
     public function delete($id)
     {
         $this->playlistService->delete($id);
+        toastr()->success('Xóa playlist thành công!');
         return redirect()->route('playlist.index');
     }
 
@@ -61,6 +63,7 @@ class PlayListController extends Controller
     public function update(Request $request, $id)
     {
         $this->playlistService->edit($request , $id);
+        toastr()->success('Cập nhật thành công!');
         return back();
     }
     public function information($id){

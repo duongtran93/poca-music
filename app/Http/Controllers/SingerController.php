@@ -34,7 +34,9 @@ class SingerController extends Controller
             return back();
         } else {
             $this->singerService->create($request);
+            toastr()->success('Thêm mới thành công!');
             return redirect()->route('singer.index');
         }
     }
+
 }
