@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="{{ asset('storage/source/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('storage/mycss/login.css') }}">
     <link rel="stylesheet" href="{{ asset('storage/mycss/register.css') }}">
+    <link rel="stylesheet" href="{{ asset('storage/mycss/search-result.css') }}">
 
     {{--    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>--}}
     <script type="text/javascript">
@@ -31,7 +32,7 @@
     </script>
 </head>
 
-<body>
+<body id="body">
 <!-- Preloader -->
 <div id="preloader">
     <div class="preloader-thumbnail">
@@ -63,8 +64,8 @@
 <!-- Active js -->
 <script src="{{ asset('storage/source/js/default-assets/active.js') }}"></script>
 
-<script type="text/javascript" src="{{ asset('storage/myjs/login.js') }}"></script>
 <script type="text/javascript" src="{{ asset('storage/myjs/show-hide-password.js') }}"></script>
+<script type="text/javascript" src="{{ asset('storage/myjs/search-result.js') }}"></script>
 
 </body>
 
