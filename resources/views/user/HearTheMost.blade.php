@@ -7,7 +7,7 @@
             @foreach($songs as $song)
                 <a href="{{route('songs.listen', $song->id)}}">
                     <div class="col-3 mt-3">
-                        <div class="card h-100">
+                        <div class="card h-100" style="border: none">
                             <img src="{{asset('storage/'. $song->image)}}" class="card-img-top mb-3 m-3"
                                  alt="..." style="width:87%;height: 200px;border-radius: 50%">
                             <a href="{{route('songs.listen', $song->id)}}">
