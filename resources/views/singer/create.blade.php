@@ -19,6 +19,9 @@
                             <div class="form-group">
                                 <label>Image</label>
                                 <input type="file" name="image">
+                                @if ($errors->has('image'))
+                                    <p class="text-danger">*{{$errors->first('image')}}</p>
+                                @endif
                             </div>
                             <button type="submit" class="btn btn-dark mt-2">Submit</button>
                             @if (\Illuminate\Support\Facades\Session::has('error'))
