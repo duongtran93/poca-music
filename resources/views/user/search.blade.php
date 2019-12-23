@@ -11,7 +11,7 @@
                             <div class="card h-100">
                                 <img src="{{asset('storage/'.$song->image)}}" class="card-img-top"
                                      alt="..." style="height: 230px ">
-                                <a href="{{route('songs.listen',$song->id)}}"><h5>{{$song->name}}</h5></a>
+                                <a href="{{route('song.listen',$song->id)}}"><h5>{{$song->name}}</h5></a>
                             </div>
                         </div>
                     @endforeach
