@@ -43,5 +43,6 @@ class NewSongController extends Controller
             $songs = DB::table('songs')->where('name','LIKE','%'.$keyword.'%')->get();
             return \response()->json($songs);
         }
+        return view('song.search', compact('songs'));
     }
 }
