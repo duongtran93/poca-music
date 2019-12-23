@@ -35,6 +35,7 @@ class SongController extends Controller
         try {
             $message = 'Them moi thanh Cong';
             $this->songService->create($request);
+            toastr()->success('Thêm mới  thành công!');
             return redirect()->route('user.index');
         } catch (\Exception $e) {
             return $e->getMessage();
@@ -51,6 +52,7 @@ class SongController extends Controller
     {
         try {
             $this->songService->update($request, $id);
+            toastr()->success('Cập nhật thành công!');
             return redirect()->route('user.index');
         } catch (\Exception $e) {
             return $e->getMessage();
@@ -69,6 +71,7 @@ class SongController extends Controller
                 Storage::disk('public')->delete($song->image);
             }
             $this->songService->delete($song);
+            toastr()->success('Xóa bài hát  thành công!');
             return redirect()->route('user.index');
         } catch (\Exception $e) {
             return $e->getMessage();
