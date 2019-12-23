@@ -9,7 +9,7 @@
             <span class="music-published-date">December 9, 2019</span>
             <h2 style="color: black">{{$song->name}}</h2>
             <div class="music-meta-data">
-                <p>By <a href="#" class="music-author">Admin</a> | <a href="#" class="music-catagory">Tutorials</a> | <a href="#" class="music-duration">00:04:06</a></p>
+                By <a href="#" class="music-author">{{$song->user->name}}</a>
             </div>
             <div class="poca-music-player">
                 <audio preload="auto" controls>
@@ -17,7 +17,10 @@
                 </audio>
             </div>
             <div class="likes-share-download d-flex align-items-center justify-content-between">
+                <div>
                 <a href="#"><i class="fa fa-heart" aria-hidden="true"></i> Like (29)</a>
+                <span class="ml-2" style="color: #a6a6a6; font-size: 14px;"><i class="fa fa-headphones" aria-hidden="true"></i> Lượt Nghe ({{$song->listen_count}})</span>
+                </div>
                 <div>
                     {{--                    <a href="#" class="mr-4"><i class="fa fa-plus" aria-hidden="true"></i> Thêm vào</a>--}}
                     <div class="dropdown">

@@ -17,8 +17,8 @@
     <link rel="icon" href="{{ asset('storage/source/img/core-img/favicon.ico') }}">
 
     <!-- Core Stylesheet -->
-    <link rel="stylesheet" href="{{ asset('storage/source/style.css') }}">
     <link rel="stylesheet" href="{{ asset('storage/source/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('storage/source/style.css') }}">
     <link href="{{ asset('storage/mycss/user-profile.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('storage/mycss/toastr.css') }}">
     <style>
