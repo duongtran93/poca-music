@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateSingerRequest;
+use App\Http\Requests\SearchRequest;
 use App\Service\SingerServiceInterface;
 use App\Singer;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+
 class SingerController extends Controller
 {
     public $singerService;
@@ -39,4 +42,9 @@ class SingerController extends Controller
         }
     }
 
+    public function search(SearchRequest $request) {
+        $keyword = $request->search;
+        $singers = DB::table('singers ')->where('name','LIKE','%'.$keyword.'%')->get();
+        return view('song.search',compact('singers'));
+    }
 }

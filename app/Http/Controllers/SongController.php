@@ -80,6 +80,7 @@ class SongController extends Controller
 
     public function listen($id)
     {
+        Song::where('id', $id)->increment('listen_count');
         $song = $this->songService->findById($id);
         $playlists = Playlist::where('user_id', Auth::user()->id)->get();
         return view('user.listenMusic', compact('song', 'playlists'));
@@ -87,13 +88,13 @@ class SongController extends Controller
 
     public function songNew()
     {
-        $songs = $this->songService->getAll();
+        $songs = DB::table('songs')->select('id', 'name', 'image')->orderBy('created_at', 'desc')->get();
         return view('user.recent',compact('songs'));
     }
 
     public function listenTheMost()
     {
-        $songs = $this->songService->getAll();
+        $songs = DB::table('songs')->select('id', 'name', 'image')->orderBy('listen_count', 'desc')->get();
         return view('user.HearTheMost', compact('songs'));
     }
 
@@ -101,6 +102,6 @@ class SongController extends Controller
     public function search(SearchRequest $request) {
         $keyword = $request->search;
         $songs = DB::table('songs')->where('name','LIKE','%'.$keyword.'%')->get();
-        return view('user.search',compact('songs'));
+        return view('user.search',compact('songs','playlists'));
     }
 }

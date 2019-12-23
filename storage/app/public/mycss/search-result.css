@@ -1,0 +1,10 @@
+.resultSearch {
+    display: block;
+    width: 220px;
+    top: 50px;
+    border: none;
+    overflow: hidden;
+    position: absolute;
+    background: #ffffff;
+    z-index: 10000;
+}
