@@ -48,7 +48,7 @@
                             <th scope="row">{{++ $key}}</th>
                             <td><a href="{{route('song.listen', $song->id)}}">{{$song->name}}</a> <span class="badge badge-info">{{$song->category['name']}}</span></td>
                             <td>{!! $song->desc !!}</td>
-                            <td><img src="{{asset('storage/'. $song->image)}}" style="width: 80px "></td>
+                            <td><img src="{{asset('storage/'. $song->image)}}" style="width: 80px ;height: 80px"></td>
                             <td>
                                 <a class="deleteSongInPlaylist" href="{{route('playlist.deleteSong', ['playlist_id'=>$playlist->id, 'song_id'=>$song->id])}}">
                                     <button class="btn btn-danger">Xóa khỏi playlist này</button>
