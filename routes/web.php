@@ -60,6 +60,8 @@ Route::prefix('playlists')->group(function (){
     Route::get('delete/{id}', 'PlayListController@delete')->name('playlist.delete');
     Route::get('edit/{id}','PlayListController@edit')->name('playlist.edit');
     Route::post('edit/{id}','PlayListController@update')->name('playlist.update');
+    Route::get('informationOC/{id}', 'PlayListController@informationOC')->name('playlist.informationOC');
+
 });
 
 Route::prefix('singers')->group(function (){

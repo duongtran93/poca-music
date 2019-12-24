@@ -25,7 +25,7 @@ $(document).ready(function () {
                 });
                 $.each(data[1], function (index, item) {
                     playlist += '<p>';
-                    playlist += '<a href="http://127.0.0.1:8000/playlists/information/'+item.id+'">';
+                    playlist += '<a href="http://127.0.0.1:8000/playlists/informationOC/'+item.id+'">';
                     playlist += item.name;
                     playlist += '</a>';
                     playlist += '</p>'

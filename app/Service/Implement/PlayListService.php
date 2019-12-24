@@ -8,6 +8,7 @@ use App\Playlist;
 use App\Repository\PlayListRepositoryInterface;
 use App\Service\PlayListServiceInterface;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class PlayListService implements PlayListServiceInterface
 {
@@ -33,6 +34,11 @@ class PlayListService implements PlayListServiceInterface
         $playlist = new Playlist();
 
         $playlist->name = $request->name;
+        if ($request->hasFile('image')){
+            $img = $request->file('image');
+            $path = $img->store('images', 'public');
+            $playlist->image = $path;
+        }
         $playlist->user_id = Auth::user()->id;
         return $this->playlistRepository->store($playlist);
     }
@@ -47,6 +53,15 @@ class PlayListService implements PlayListServiceInterface
     {
         $playlist = $this->playlistRepository->finById($id);
         $playlist->name = $request->name;
+        if ($request->hasFile('image')){
+            $oldImage = $playlist->image;
+            if ($oldImage){
+                Storage::disk('public')->delete($oldImage);
+            }
+            $img = $request->file('image');
+            $path = $img->store('images', 'public');
+            $playlist->image = $path;
+        }
         return $this->playlistRepository->update($playlist);
     }
 }
