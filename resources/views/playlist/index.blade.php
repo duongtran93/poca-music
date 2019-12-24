@@ -21,11 +21,12 @@
                         <a href="{{route('playlist.information',$playlist->id)}}">
                             <div class="col-3 mt-lg-4">
                                 <div class="card h-100">
-                                    <img src="{{asset('storage/images/anhtaboemroi.jpeg')}}" class="card-img-top"
+                                    <img src="{{asset('storage/'.$playlist->image)}}" class="card-img-top"
                                          alt="..." style="width:100%;height: 200px;border-radius: 50%">
                                     <a href="{{route('playlist.information',$playlist->id)}}">
                                         <h5 class="text-center">{{$playlist->name}}</h5></a>
-                                    <p class="text-center">Tạo bởi {{\Illuminate\Support\Facades\Auth::user()->name}}</p>
+                                    <p class="text-center">Tạo
+                                        bởi {{\Illuminate\Support\Facades\Auth::user()->name}}</p>
                                 </div>
                             </div>
                         </a>
@@ -39,12 +40,16 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="playlist-form">
-                    <form action="{{route('playlist.store')}}" method="post">
+                    <form action="{{route('playlist.store')}}" method="post" enctype="multipart/form-data">
                         @csrf
                         <h2 class="text-center">Tạo playlist mới</h2>
+                        <h6>Tên</h6>
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Nhập tên playlist" autofocus
-                                   name="name" required>
+                            <input type="text" class="form-control" autofocus name="name" required>
+                        </div>
+                        <h6>Ảnh</h6>
+                        <div class="input-group">
+                            <input type="file" name="image" required>
                         </div>
                         <div class="form-group">
                             <button type="submit" class="btn btn-success btn-block playlist-btn mt-2">Lưu</button>
