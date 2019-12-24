@@ -16,7 +16,6 @@ class SingerController extends Controller
     public function __construct(SingerServiceInterface $singerService)
     {
         $this->singerService = $singerService;
-        $this->middleware('auth');
     }
 
     public function index()
@@ -40,6 +39,17 @@ class SingerController extends Controller
             toastr()->success('Thêm mới ca sĩ thành công!');
             return redirect()->route('singer.index');
         }
+    }
+    public function singerGuest()
+    {
+        $singers = $this->singerService->getAll();
+        return view('singer.guest', compact('singers'));
+    }
+
+    public function information($id)
+    {
+        $singer = $this->singerService->findById($id);
+        return view('singer.information' , compact('singer'));
     }
 
 }

@@ -68,4 +68,6 @@ Route::prefix('singers')->group(function (){
     Route::get('index', 'SingerController@index')->name('singer.index');
     Route::get('create', 'SingerController@create')->name('singer.create');
     Route::post('create', 'SingerController@store')->name('singer.store');
+    Route::get('guest', 'SingerController@singerGuest')->name('singer.guest');
+    Route::get('information/{id}', 'SingerController@information')->name('singer.information');
 });
