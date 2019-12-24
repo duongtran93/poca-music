@@ -37,9 +37,10 @@
                                 <input id="search" type="search" name="search" class="form-control" placeholder="Search and hit enter...">
                                 <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
                             </form>
-                            <div class="resultSearch m-2">
+                            <div class="resultSearch mt-2">
                                 <div id="result"></div>
-                                <div id=""></div>
+                                <div id="playlist"></div>
+                                <div id="singer"></div>
                             </div>
                         </div>
 

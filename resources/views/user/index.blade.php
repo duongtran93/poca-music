@@ -40,7 +40,7 @@
                             <th scope="row">{{++ $key}}</th>
                             <td><a href="{{route('song.listen', $song->id)}}">{{$song->name}}</a></td>
                            <td>{!! $song->desc !!}</td>
-                            <td><img src="{{asset('storage/'. $song->image)}}" style="width: 80px "></td>
+                            <td><img src="{{asset('storage/'. $song->image)}}" style="width: 80px;height: 80px "></td>
                             <td>
                                 <a href="{{route('song.edit', $song->id)}}"><button class="btn btn-success">Edit</button></a>
                                 <a href="{{route('song.delete', $song->id)}}" onclick="return confirm('Bạn có chắc chắn muốn xóa?')">
