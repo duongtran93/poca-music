@@ -16,7 +16,7 @@ class PlayListController extends Controller
     public function __construct(PlayListServiceInterface $playlistService)
     {
         $this->playlistService = $playlistService;
-        $this->middleware('auth');
+//        $this->middleware('auth');
     }
 
     public function index()
@@ -73,9 +73,4 @@ class PlayListController extends Controller
         return view('playlist.information',compact('playlist', 'songs'));
     }
 
-    public function search(SearchRequest $request) {
-        $keyword = $request->search;
-        $playlists = DB::table('playlists ')->where('name','LIKE','%'.$keyword.'%')->get();
-        return view('song.search',compact('playlists'));
-    }
 }

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    @include('menu-user')
+    @include('menu')
     <div class="container">
         <div class="row">
             <div class="col-4" style="height: auto">

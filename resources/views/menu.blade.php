@@ -40,7 +40,8 @@
                             </form>
                             <div class="resultSearch mt-2">
                                 <div id="result"></div>
-                                <div id=""></div>
+                                <div id="playlist"></div>
+                                <div id="singer"></div>
                             </div>
                         </div>
 

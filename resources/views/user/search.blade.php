@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h2>Search result</h2>
+                <h2>Bài hát</h2>
                 <div class="row row-cols-1 row-cols-md-3">
                     @foreach($songs as $song )
                         <div class="col-3 mt-lg-4">
