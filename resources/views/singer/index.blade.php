@@ -20,8 +20,8 @@
                     @foreach($singers as $singer )
                             <div class="col-3 mt-lg-4">
                                 <div class="card h-100">
-                                    <img src="{{asset('storage/SingerAvatar/'. $singer->image)}}" class="card-img-top m-3 mb-3"
-                                         style="width:87%;height: 200px;border-radius: 50%">
+                                    <img src="{{asset('storage/SingerAvatar/'. $singer->image)}}" class="card-img-top"
+                                         style="width:100%;height: 200px;border-radius: 50%">
                                     <h5 class="text-center">{{$singer->name}}</h5>
                                 </div>
                             </div>
