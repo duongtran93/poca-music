@@ -37,14 +37,9 @@ class SingerController extends Controller
             return back();
         } else {
             $this->singerService->create($request);
-            toastr()->success('Thêm mới thành công!');
+            toastr()->success('Thêm mới ca sĩ thành công!');
             return redirect()->route('singer.index');
         }
     }
 
-    public function search(SearchRequest $request) {
-        $keyword = $request->search;
-        $singers = DB::table('singers ')->where('name','LIKE','%'.$keyword.'%')->get();
-        return view('song.search',compact('singers'));
-    }
 }

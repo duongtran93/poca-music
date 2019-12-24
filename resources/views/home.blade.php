@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="{{ asset('storage/source/style.css') }}">
     <link href="{{ asset('storage/mycss/user-profile.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('storage/mycss/toastr.css') }}">
+    <link rel="stylesheet" href="{{ asset('storage/mycss/search-result.css') }}">
     <style>
         .top-social-area a {
             display: inline-block;
@@ -63,6 +64,7 @@
 <script src="{{ asset('storage/source/js/default-assets/active.js') }}"></script>
 <script type="text/javascript" src="{{ asset('storage/myjs/show-hide-password.js') }}"></script>
 {{--<script type="text/javascript" src="{{ asset('storage/myjs/toastr.js') }}"></script>--}}
+<script type="text/javascript" src="{{ asset('storage/myjs/search-result.js') }}"></script>
 
 
 </body>

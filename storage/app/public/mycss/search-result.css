@@ -1,9 +1,11 @@
 .resultSearch {
     display: block;
     width: 220px;
+    max-height: 300px;
     top: 50px;
     border: none;
     overflow: hidden;
+    overflow-y: scroll;
     position: absolute;
     background: #ffffff;
     z-index: 10000;

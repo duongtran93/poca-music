@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="{{ asset('storage/source/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('storage/source/style.css') }}">
     <link href="{{ asset('storage/mycss/user-profile.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('storage/mycss/search-result.css') }}">
     <link rel="stylesheet" type="text/css" href="{{asset('storage/Login/fonts/Linearicons-Free-v1.0.0/icon-font.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('storage/Login/vendor/animate/animate.css')}}">
     <link rel="stylesheet" type="text/css" href="{{ asset('storage/Login/vendor/css-hamburgers/hamburgers.min.css') }}">
@@ -71,6 +72,7 @@
 <script src="{{ asset('storage/Login/vendor/daterangepicker/daterangepicker.js') }}"></script>
 <script src="{{ asset('storage/Login/vendor/countdowntime/countdowntime.js') }}"></script>
 <script src="{{ asset('storage/Login/js/main.js') }}"></script>
+<script type="text/javascript" src="{{ asset('storage/myjs/search-result.js') }}"></script>
 
 
 </body>

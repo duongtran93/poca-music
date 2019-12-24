@@ -66,6 +66,7 @@
 
 <script type="text/javascript" src="{{ asset('storage/myjs/show-hide-password.js') }}"></script>
 <script type="text/javascript" src="{{ asset('storage/myjs/search-result.js') }}"></script>
+{{--<script type="text/javascript" src="{{ asset('storage/myjs/search-playlist.js') }}"></script>--}}
 
 </body>
 
