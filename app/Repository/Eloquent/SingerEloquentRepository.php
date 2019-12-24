@@ -24,7 +24,7 @@ class SingerEloquentRepository implements SingerRepositoryInterface
 
     public function findById($id)
     {
-       return $this->singer->findOrFail();
+       return $this->singer->findOrFail($id);
     }
 
     public function store($obj)
