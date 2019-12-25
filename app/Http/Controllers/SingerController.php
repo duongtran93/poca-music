@@ -55,7 +55,6 @@ class SingerController extends Controller
     public function informationSingerGuest($id)
     {
         $singer = $this->singerService->findById($id);
-        return view('singer.informationGuest' , compact('singer'));
+        return view('singer.informationGuest', compact('singer'));
     }
-
 }
