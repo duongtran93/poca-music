@@ -33,7 +33,7 @@ $(document).ready(function () {
                 });
                 $.each(data[2], function (index, item) {
                     singer += '<p>';
-                    singer += '<a href="http://127.0.0.1:8000/songs/listenMusic/'+item.id+'">';
+                    singer += '<a href="http://127.0.0.1:8000/singers/informationOC/'+item.id+'">';
                     singer += item.name;
                     singer += '</a>';
                     singer += '</p>'

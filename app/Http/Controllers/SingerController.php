@@ -52,4 +52,10 @@ class SingerController extends Controller
         return view('singer.information' , compact('singer'));
     }
 
+    public function informationSingerGuest($id)
+    {
+        $singer = $this->singerService->findById($id);
+        return view('singer.informationGuest' , compact('singer'));
+    }
+
 }

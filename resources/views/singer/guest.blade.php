@@ -11,7 +11,9 @@
                             <div class="card h-100">
                                 <img src="{{asset('storage/SingerAvatar/'. $singer->image)}}" class="card-img-top"
                                      style="width:100%;height: 200px;border-radius: 50%">
-                                <h5 class="text-center">{{$singer->name}}</h5>
+                                <a href="{{route('singer.informationGuest' , $singer->id)}}">
+                                    <h5 class="text-center">{{$singer->name}}</h5>
+                                </a>
                             </div>
                         </div>
                     @endforeach
