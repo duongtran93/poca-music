@@ -15,4 +15,9 @@ class Playlist extends Model
     public function songs() {
         return $this->belongsToMany('App\Song');
     }
+
+    public function comments()
+    {
+        return $this->hasMany('App\comment');
+    }
 }
