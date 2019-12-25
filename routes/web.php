@@ -70,4 +70,5 @@ Route::prefix('singers')->group(function (){
     Route::post('create', 'SingerController@store')->name('singer.store');
     Route::get('guest', 'SingerController@singerGuest')->name('singer.guest');
     Route::get('information/{id}', 'SingerController@information')->name('singer.information');
+    Route::get('informationOC/{id}', 'SingerController@informationSingerGuest')->name('singer.informationGuest');
 });
