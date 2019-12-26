@@ -699,7 +699,7 @@ ul {
         @media only screen and (max-width: 767px) {
           .poca-music-area .poca-music-content .likes-share-download a {
             font-size: 12px; } }
-        .poca-music-area .poca-music-content .likes-share-download a:focus, .poca-music-area .poca-music-content .likes-share-download a:hover {
+        .poca-music-area .poca-music-content .likes-share-download a:hover {
           color: #f55656; }
   .poca-music-area.style-2 {
     margin-bottom: 30px;

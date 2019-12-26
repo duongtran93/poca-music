@@ -4,8 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateAndEditPlaylistRequest;
 use App\Http\Requests\SearchRequest;
+use App\Like;
 use App\Playlist;
+use App\Playlistlike;
 use App\Service\PlayListServiceInterface;
+use App\Song;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -72,6 +75,38 @@ class PlayListController extends Controller
         $playlist = $this->playlistService->findById($id);
         $songs = $playlist->songs()->get();
         return view('playlist.information',compact('playlist', 'songs'));
+    }
+
+    public function likePlaylist(Request $request)
+    {
+        $playlist_id = $request['playlistId'];
+        $is_like = $request['isLike'] === 'true';
+        $update = false;
+        $playlist = Playlist::find($playlist_id);
+        if (!$playlist) {
+            return null;
+        }
+        $user = Auth::user();
+        $like = $user->playlistlikes()->where('playlist_id', $playlist_id)->first();
+        if ($like) {
+            $already_like = $like->like;
+            $update = true;
+            if ($already_like == $is_like) {
+                $like->delete();
+                return null;
+            }
+        } else {
+            $like = new Playlistlike();
+        }
+        $like->like = $is_like;
+        $like->user_id = $user->id;
+        $like->playlist_id = $playlist->id;
+        if ($update) {
+            $like->update();
+        } else {
+            $like->save();
+        }
+        return null;
     }
 
     public function informationOC($id){
