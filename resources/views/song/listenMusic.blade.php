@@ -39,3 +39,4 @@
     </div>
     @include('footer')
 @endsection
+

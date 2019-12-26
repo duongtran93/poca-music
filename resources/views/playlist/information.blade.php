@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-4" style="height: auto">
                 <div class="col-10 mt-lg-4">
-                    <div class="card h-100">
+                    <div class="card h-100" data-playlistid="{{ $playlist->id }}">
                         <img src="{{asset('storage/'.$playlist->image)}}" class="card-img-top"
                              alt="..." style="height: 230px ">
                         <div class="row">
@@ -25,6 +25,10 @@
                                         </a>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="col-6">
+                                <a href="#" class="like-playlist">{{ Auth::user()->playlistlikes()->where('playlist_id', $playlist->id)->first() ? Auth::user()->playlistlikes()->where('playlist_id', $playlist->id)->first()->like == 1 ? 'You like this playlist' : 'Like' : 'Like'  }}</a> |
+                                <a href="#" class="like-playlist">{{ Auth::user()->playlistlikes()->where('playlist_id', $playlist->id)->first() ? Auth::user()->playlistlikes()->where('playlist_id', $playlist->id)->first()->like == 0 ? 'You dont like this song' : 'Dislike' : 'Dislike'  }}</a>
                             </div>
                         </div>
                     </div>
@@ -88,4 +92,8 @@
         </div>
     </div>
     @include('footer')
+    <script>
+        let token = '{{ \Illuminate\Support\Facades\Session::token() }}';
+        let urlLikePlaylist = '{{ route('playlist.like') }}'
+    </script>
 @endsection
