@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h2>List Singer</h2>
+                <h2>Sanh sách ca sĩ</h2>
                 <div class="row row-cols-1 row-cols-md-3">
                     <div class="col-3 mt-lg-4">
                         <a href="{{route('singer.create')}}" style="cursor: pointer">

@@ -6,7 +6,7 @@
             <img src="{{ asset('storage/' . $song->image) }}" style="width: 100%;height: 200px">
         </div>
         <div class="poca-music-content">
-            <span class="music-published-date">December 9, 2019</span>
+            <span class="music-published-date">26, tháng 12, 2019</span>
             <h2 style="color: black">{{$song->name}}</h2>
             <div class="music-meta-data">
                 By <a href="#" class="music-author">{{$song->user->name}}</a>
@@ -42,13 +42,13 @@
             <div id="messageAdd" class="text-center"></div>
         </div>
         <div id="topic">
-            <a href="#" class="badge badge-primary">Primary</a>
-            <a id="addTopic" href="#">Manager topics</a><br>
+            <a href="#" class="badge badge-primary">Sơ cấp</a>
+            <a id="addTopic" href="#">Quản lí chủ đề</a><br>
             <div id="inputtag">
                 <form action="" method="post">
                     <input name="tagName" id="tagName" class="form-control" type="text" data-role="tagsinput" value="">
                     <div id="tagList"></div>
-                    <button type="button" class="btn btn-outline-dark">Done</button>
+                    <button type="button" class="btn btn-outline-dark">Xong</button>
                 </form>
             </div>
         </div>

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     @include('menu-user')
-    <div class="container">
+    <div class="container pt-3">
         <div class="d-flex justify-content-center h-100">
             <div class="card-edit-profile">
                 <div class="card-header">
@@ -10,7 +10,7 @@
                 <div class="card-body">
                     <form method="post" action="{{route('user.update', $user->id)}}" enctype="multipart/form-data">
                         @csrf
-                        <h6 class="mb-2">Name</h6>
+                        <h6 class="mb-2">Tên</h6>
                         <div class="form-control mb-4">
                             <input type="text" name="name" value="{{$user->name}}">
                         </div>
@@ -21,21 +21,21 @@
                         <div class="form-control  mb-4">
                             <input type="text" name="email" value="{{$user->email}}" disabled>
                         </div>
-                        <h6 class="mt-4 mb-2">Phone</h6>
+                        <h6 class="mt-4 mb-2">Số điện thoại</h6>
                         <div class="form-control  mb-4">
                             <input type="text" name="phone" value="{{$user->phone}}">
                         </div>
                         @if($errors->has('phone'))
                             <p class="text-danger">* {{ $errors->first('phone') }}</p>
                         @endif
-                        <h6 class="mt-4 mb-2">Address</h6>
+                        <h6 class="mt-4 mb-2">Địa chỉ</h6>
                         <div class="form-control  mb-4">
                             <input type="text" name="address" value="{{$user->address}}">
                         </div>
                         @if($errors->has('address'))
                             <p class="text-danger">* {{ $errors->first('address') }}</p>
                         @endif
-                        <h6 class="mt-4 mb-2">Avatar</h6>
+                        <h6 class="mt-4 mb-2">Ảnh đại diện</h6>
                         <div class="  mb-4">
                             <img src="{{asset('storage/avatar/'.$user->avatar)}}" style="width: 50px;height: 50px">
                             <input type="file" name="avatar">

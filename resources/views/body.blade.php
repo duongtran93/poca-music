@@ -28,7 +28,7 @@
                         <span class="music-published-date mb-2">December 9, 2018</span>
                         <h3>Anh Ta Bỏ Em Rồi - Hương Giang</h3>
                         <div class="music-meta-data">
-                            <p>By <a href="#" class="music-author">Admin</a> | <a href="#" class="music-catagory">Tutorials</a> | <a href="#" class="music-duration">00:04:51</a></p>
+                            <p>Bởi <a href="#" class="music-author">Admin</a> | <a href="#" class="music-catagory">Hướng dẫn</a> | <a href="#" class="music-duration">00:04:51</a></p>
                         </div>
                         <!-- Music Player -->
                         <div class="poca-music-player">
@@ -38,10 +38,10 @@
                         </div>
                         <!-- Likes, Share & Download -->
                         <div class="likes-share-download d-flex align-items-center justify-content-between">
-                            <a href="#"><i class="fa fa-heart" aria-hidden="true"></i> Like (29)</a>
+                            <a href="#"><i class="fa fa-heart" aria-hidden="true"></i> Thích (29)</a>
                             <div>
-                                <a href="#" class="mr-4"><i class="fa fa-share-alt" aria-hidden="true"></i> Share(04)</a>
-                                <a href="#"><i class="fa fa-download" aria-hidden="true"></i> Download (12)</a>
+                                <a href="#" class="mr-4"><i class="fa fa-share-alt" aria-hidden="true"></i> Chia sẻ(04)</a>
+                                <a href="#"><i class="fa fa-download" aria-hidden="true"></i> Tải xuống (12)</a>
                             </div>
                         </div>
                     </div>
@@ -59,7 +59,7 @@
                         <span class="music-published-date mb-2">December 9, 2018</span>
                         <h3>Có Như Không Có - Hiền Hồ</h3>
                         <div class="music-meta-data">
-                            <p>By <a href="#" class="music-author">Admin</a> | <a href="#" class="music-catagory">Tutorials</a> | <a href="#" class="music-duration">00:04:34</a></p>
+                            <p>Bởi <a href="#" class="music-author">Admin</a> | <a href="#" class="music-catagory">Hướng dẫn</a> | <a href="#" class="music-duration">00:04:34</a></p>
                         </div>
                         <!-- Music Player -->
                         <div class="poca-music-player">
@@ -69,10 +69,10 @@
                         </div>
                         <!-- Likes, Share & Download -->
                         <div class="likes-share-download d-flex align-items-center justify-content-between">
-                            <a href="#"><i class="fa fa-heart" aria-hidden="true"></i> Like (29)</a>
+                            <a href="#"><i class="fa fa-heart" aria-hidden="true"></i> Thích (29)</a>
                             <div>
-                                <a href="#" class="mr-4"><i class="fa fa-share-alt" aria-hidden="true"></i> Share(04)</a>
-                                <a href="#"><i class="fa fa-download" aria-hidden="true"></i> Download (12)</a>
+                                <a href="#" class="mr-4"><i class="fa fa-share-alt" aria-hidden="true"></i> Chia sẻ(04)</a>
+                                <a href="#"><i class="fa fa-download" aria-hidden="true"></i> Tải xuống (12)</a>
                             </div>
                         </div>
                     </div>
