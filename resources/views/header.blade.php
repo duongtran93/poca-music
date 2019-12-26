@@ -41,7 +41,7 @@
                                 <!-- Music Player -->
                                 <div class="poca-music-player">
                                     <audio preload="auto" controls>
-                                        <source src="{{ asset('storage/songs/CoThamKhongVe.mp3') }}">
+                                        <source src="{{ asset('storage/songs/co-tham-khong-ve.mp3') }}">
                                     </audio>
                                 </div>
                                 <!-- Likes, Share & Download -->
