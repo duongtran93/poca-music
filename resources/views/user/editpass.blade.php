@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     @include('menu-user')
-    <div class="container">
+    <div class="container pt-3">
         <div class="d-flex justify-content-center h-100">
             <div class="card-changer-pass">
                 <div class="card-header">

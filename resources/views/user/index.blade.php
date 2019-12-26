@@ -14,7 +14,7 @@
                         <a href="{{route('playlist.index')}}">Playlist</a>
                     </li>
                     <li>
-                        <a href="{{ route('song.create') }}">Upload</a>
+                        <a href="{{ route('song.create') }}">Tải lên bài hát</a>
                     </li>
                 </ul>
             </div>
@@ -22,16 +22,16 @@
     </div>
     <div class="container">
         <div class="card mt-5">
-            <h5 class="card-header" style="color: white">Song List</h5>
+            <h5 class="card-header" style="color: white">Danh sách bài hát</h5>
             <div class="card-body">
                 <table class="table table-bordered">
                     <thead class="thead-dark">
                     <tr>
                         <th scope="col">STT</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Description</th>
-                        <th scope="col">Image</th>
-                        <th scope="col">Action</th>
+                        <th scope="col">Tên</th>
+                        <th scope="col">Miêu tả</th>
+                        <th scope="col">Ảnh</th>
+                        <th scope="col">Hoạt động</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -42,9 +42,9 @@
                            <td>{!! $song->desc !!}</td>
                             <td><img src="{{asset('storage/'. $song->image)}}" style="width: 80px;height: 80px "></td>
                             <td>
-                                <a href="{{route('song.edit', $song->id)}}"><button class="btn btn-success">Edit</button></a>
+                                <a href="{{route('song.edit', $song->id)}}"><button class="btn btn-success">Chỉnh sửa</button></a>
                                 <a href="{{route('song.delete', $song->id)}}" onclick="return confirm('Bạn có chắc chắn muốn xóa?')">
-                                    <button class="btn btn-danger">Delete</button>
+                                    <button class="btn btn-danger">Xóa</button>
                                 </a>
                             </td>
                         </tr>

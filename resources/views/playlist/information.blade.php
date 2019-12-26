@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     @include('menu-user')
-    <div class="container">
+    <div class="container pt-3">
         <div class="row">
             <div class="col-4" style="height: auto">
                 <div class="col-10 mt-lg-4">
@@ -19,9 +19,9 @@
                                         <img src="https://img.icons8.com/ios-glyphs/20/000000/ellipsis.png">
                                     </button>
                                     <div class="dropdown-menu text-center" aria-labelledby="dropdownMenu2">
-                                        <button class="dropdown-item" type="button" data-toggle="modal" data-target="#playlistModal">Edit</button>
+                                        <button class="dropdown-item" type="button" data-toggle="modal" data-target="#playlistModal">Sửa</button>
                                         <a href="{{route('playlist.delete', $playlist->id)}}" onclick="return confirm('Bạn có chắc chắn muốn xóa?')">
-                                        <button class="dropdown-item" type="button">Delete</button>
+                                        <button class="dropdown-item" type="button">Xóa</button>
                                         </a>
                                     </div>
                                 </div>
@@ -35,15 +35,15 @@
                 </div>
             </div>
             <div class="col-8" style="height: auto">
-                <h1>List Song</h1>
+                <h1>Danh sách bài hát</h1>
                 <table class="table table-bordered">
                     <thead class="thead-dark">
                     <tr>
                         <th scope="col">STT</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Description</th>
-                        <th scope="col">Image</th>
-                        <th scope="col">Action</th>
+                        <th scope="col">Tên</th>
+                        <th scope="col">Miêu tả</th>
+                        <th scope="col">Ảnh</th>
+                        <th scope="col">Hoạt động</th>
                     </tr>
                     </thead>
                     <tbody>

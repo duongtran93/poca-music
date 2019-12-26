@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     @include('menu')
-    <div class="container">
+    <div class="container pt-3">
         <div class="row">
             <div class="col-4" style="height: auto">
                 <div class="col-10 mt-lg-4">
@@ -17,14 +17,14 @@
                 </div>
             </div>
             <div class="col-8" style="height: auto">
-                <h1>List Song</h1>
+                <h1>Danh sách bài hát</h1>
                 <table class="table table-bordered">
                     <thead class="thead-dark">
                     <tr>
                         <th scope="col">STT</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Description</th>
-                        <th scope="col">Image</th>
+                        <th scope="col">Tên</th>
+                        <th scope="col">Miêu tả</th>
+                        <th scope="col">Ảnh</th>
                     </tr>
                     </thead>
                     <tbody>
