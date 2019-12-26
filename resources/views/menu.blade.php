@@ -35,7 +35,7 @@
                         <div class="top-search-area">
                             <form action="{{route('songs.search')}}" method="get">
                                 @csrf
-                                <input id="search" type="text" name="search" class="form-control" placeholder="Search and hit enter...">
+                                <input id="search" type="text" name="search" class="form-control" placeholder="Tìm kiếm và nhấn enter ...">
                                 <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
                             </form>
                             <div class="resultSearch mt-2">

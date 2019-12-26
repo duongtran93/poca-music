@@ -8,7 +8,7 @@
                 <form class="login100-form validate-form" method="post" action="{{ route('login') }}">
                     @csrf
                     <span class="login100-form-title p-b-43">
-						Login
+						Đăng nhập
 					</span>
                     <h6 class="mb-2">Email</h6>
                     <div class="form-control">
@@ -17,7 +17,7 @@
                     @error('email')
                     <strong class="text-danger">* {{ $message }}</strong>
                     @enderror
-                    <h6 class="mt-4 mb-2">Password</h6>
+                    <h6 class="mt-4 mb-2">Mật khẩu</h6>
                     <div class="form-control mb-4">
                         <input type="password" name="password" id="password">
                         <span id="toggle-password" toggle="#password-field" class="fa fa-fw fa-eye field_icon"
@@ -31,27 +31,27 @@
                             <input class="input-checkbox100" type="checkbox" name="remember"
                                    id="remember" {{ old('remember') ? 'checked' : '' }}>
                             <label class="label-checkbox100" for="remember">
-                                Remember me
+                                Nhớ tài khoản
                             </label>
                         </div>
 
                         <div>
                             @if (Route::has('password.request'))
                                 <a class="txt1" href="{{ route('password.request') }}">
-                                    Forgot Password?
+                                    Quên mật khẩu?
                                 </a>
                             @endif
                         </div>
                     </div>
                     <div class="container-login100-form-btn">
                         <button type="submit" class="login100-form-btn">
-                            Login
+                            Đăng nhập
                         </button>
                     </div>
 
                     <div class="text-center p-t-46 p-b-20">
 						<span class="txt2">
-							or login using
+							hoặc đăng nhập bằng
 						</span>
                     </div>
 

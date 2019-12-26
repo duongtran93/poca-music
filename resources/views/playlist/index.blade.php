@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     @include('menu-user')
-    <div class="container">
+    <div class="container pt-3">
         <div class="row">
             <div class="col-12">
                 <h2>Playlist</h2>
@@ -25,8 +25,7 @@
                                          alt="..." style="width:100%;height: 200px;border-radius: 50%">
                                     <a href="{{route('playlist.information',$playlist->id)}}">
                                         <h5 class="text-center">{{$playlist->name}}</h5></a>
-                                    <p class="text-center">Tạo
-                                        bởi {{\Illuminate\Support\Facades\Auth::user()->name}}</p>
+                                    <p class="text-center">Tạo bởi {{\Illuminate\Support\Facades\Auth::user()->name}}</p>
                                 </div>
                             </div>
                         </a>
@@ -47,7 +46,7 @@
                         <div class="input-group">
                             <input type="text" class="form-control" autofocus name="name" required>
                         </div>
-                        <h6>Ảnh</h6>
+                        <h6 class="mt-2">Ảnh</h6>
                         <div class="input-group">
                             <input type="file" name="image" required>
                         </div>

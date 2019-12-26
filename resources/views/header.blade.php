@@ -33,10 +33,10 @@
                                 <img src="{{ asset('storage/images/cothamkhongve.jpeg') }}" style="">
                             </div>
                             <div class="poca-music-content">
-                                <span class="music-published-date">December 9, 2019</span>
+                                <span class="music-published-date">26, tháng 12, 2019</span>
                                 <h2>Cô Thắm Không Về</h2>
                                 <div class="music-meta-data">
-                                    <p>By <a href="#" class="music-author">Admin</a> | <a href="#" class="music-catagory">Tutorials</a> | <a href="#" class="music-duration">00:04:06</a></p>
+                                    <p>By <a href="#" class="music-author">Admin</a> | <a href="#" class="music-catagory">Hướng dẫn</a> | <a href="#" class="music-duration">00:04:06</a></p>
                                 </div>
                                 <!-- Music Player -->
                                 <div class="poca-music-player">
@@ -46,10 +46,10 @@
                                 </div>
                                 <!-- Likes, Share & Download -->
                                 <div class="likes-share-download d-flex align-items-center justify-content-between">
-                                    <a href="#"><i class="fa fa-heart" aria-hidden="true"></i> Like (29)</a>
+                                    <a href="#"><i class="fa fa-heart" aria-hidden="true"></i> Thích (29)</a>
                                     <div>
-                                        <a href="#" class="mr-4"><i class="fa fa-share-alt" aria-hidden="true"></i> Share(04)</a>
-                                        <a href="#"><i class="fa fa-download" aria-hidden="true"></i> Download (12)</a>
+                                        <a href="#" class="mr-4"><i class="fa fa-share-alt" aria-hidden="true"></i> Chia sẻ (04)</a>
+                                        <a href="#"><i class="fa fa-download" aria-hidden="true"></i> Tải xuống (12)</a>
                                     </div>
                                 </div>
                             </div>
