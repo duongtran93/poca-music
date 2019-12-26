@@ -6,6 +6,8 @@
     <meta name="description" content="Poca - Podcast &amp; Audio Template">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
+
 
     @toastr_css
     <!-- Title -->
@@ -30,13 +32,19 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('storage/Login/vendor/daterangepicker/daterangepicker.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('storage/Login/css/util.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('storage/Login/css/main.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('storage/taginput/tagsinput.css') }}">
 
     <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
     <script>tinymce.init({selector:'textarea'});</script>
-    <link href="{{ asset('storage/mycss/editUser.css') }}" rel="stylesheet">
+{{--    <link href="{{ asset('storage/mycss/editUser.css') }}" rel="stylesheet">--}}
     <link href="{{ asset('storage/mycss/playlist.css') }}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ asset('storage/Login/fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}">
 {{--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">--}}
+<style>
+    .color {
+        color: #f55656;
+    }
+</style>
 </head>
 
 <body>
@@ -62,18 +70,26 @@
 <!-- Active js -->
 <script src="{{ asset('storage/source/js/default-assets/active.js') }}"></script>
 <script type="text/javascript" src="{{ asset('storage/myjs/show-hide-password.js') }}"></script>
-<script type="text/javascript" src="{{ asset('storage/myjs/toastr.js') }}"></script>
 <script type="text/javascript" src="{{ asset('storage/myjs/add-song-to-playlist.js') }}"></script>
 <script type="text/javascript" src="{{ asset('storage/myjs/delete-song-in-playlist.js') }}"></script>
-<script type="text/javascript" src="{{ asset('storage/myjs/edit-profile.js') }}"></script>
+<script type="text/javascript" src="{{ asset('storage/myjs/add-taginput.js') }}"></script>
 <script src="{{ asset('storage/Login/vendor/animsition/js/animsition.min.js') }}"></script>
 <script src="{{ asset('storage/Login/vendor/select2/select2.min.js') }}"></script>
 <script src="{{ asset('storage/Login/vendor/daterangepicker/moment.min.js') }}"></script>
 <script src="{{ asset('storage/Login/vendor/daterangepicker/daterangepicker.js') }}"></script>
 <script src="{{ asset('storage/Login/vendor/countdowntime/countdowntime.js') }}"></script>
 <script src="{{ asset('storage/Login/js/main.js') }}"></script>
+<script src="{{ asset('storage/taginput/tagsinput.js') }}"></script>
 <script type="text/javascript" src="{{ asset('storage/myjs/search-result.js') }}"></script>
-
+<script type="text/javascript" src="{{ asset('storage/myjs/like.js') }}"></script>
+<script type="text/javascript" src="{{ asset('storage/myjs/like-playlist.js') }}"></script>
+<script type="text/javascript">
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+</script>
 
 </body>
 @jquery

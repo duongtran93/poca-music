@@ -41,6 +41,7 @@ Route::prefix('song')->group(function () {
     Route::get('listenMusic/{id}', 'SongController@listen')->name('song.listen');
     Route::get('song-new', 'SongController@songNew')->name('song.songNew');
     Route::get('listenTheMost', 'SongController@listenTheMost')->name('song.listenTheMost');
+    Route::post('like','SongController@like')->name('song.like');
 });
 
 Route::prefix('songs')->group(function (){
@@ -60,6 +61,7 @@ Route::prefix('playlists')->group(function (){
     Route::get('delete/{id}', 'PlayListController@delete')->name('playlist.delete');
     Route::get('edit/{id}','PlayListController@edit')->name('playlist.edit');
     Route::post('edit/{id}','PlayListController@update')->name('playlist.update');
+    Route::post('likePlaylist','PlayListController@likePlaylist')->name('playlist.like');
 });
 
 Route::prefix('singers')->group(function (){

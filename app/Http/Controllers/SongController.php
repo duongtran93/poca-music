@@ -6,6 +6,7 @@ use App\Category;
 use App\Http\Requests\EditSongRequest;
 use App\Http\Requests\SearchRequest;
 use App\Http\Requests\SongRequest;
+use App\Like;
 use App\Playlist;
 use App\Service\Implement\SongService;
 use App\Song;
@@ -107,5 +108,37 @@ class SongController extends Controller
             return \response()->json($songs);
         }
         return view('user.search', compact('songs'));
+    }
+
+    public function like(Request $request) {
+        $song_id = $request['songId'];
+        $is_like = $request['isLike'] === 'true';
+        $update = false;
+        $song = Song::find($song_id);
+        if (!$song) {
+            return null;
+        }
+        $user = Auth::user();
+        $like = $user->likes()->where('song_id', $song_id)->first();
+        if ($like) {
+            $already_like = $like->like;
+            $update = true;
+            if ($already_like == $is_like) {
+                $like->delete();
+                return null;
+            }
+        } else {
+            $like = new Like();
+        }
+        $like->like = $is_like;
+        $like->user_id = $user->id;
+        $like->song_id = $song->id;
+        if ($update) {
+            $like->update();
+        } else {
+            $like->save();
+        }
+        return null;
+
     }
 }

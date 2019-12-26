@@ -17,7 +17,11 @@ class Song extends Model
         return $this->belongsToMany('App\Playlist');
     }
 
-    public function category() {
-        return $this->belongsTo('App\Category');
+    public function categories() {
+        return $this->belongsToMany('App\Category');
+    }
+
+    public function likes() {
+        return $this->belongsTo('App\Like');
     }
 }

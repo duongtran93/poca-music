@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     @include('menu-user')
-    <div class="poca-music-area mt-100 d-flex align-items-center flex-wrap ml-2 mr-2" data-animation="fadeInUp" data-delay="900ms">
+    <div class="poca-music-area mt-100 d-flex align-items-center flex-wrap ml-2 mr-2" data-animation="fadeInUp" data-delay="900ms" data-songid="{{ $song->id }}">
         <div class="poca-music-thumbnail">
             <img src="{{ asset('storage/' . $song->image) }}" style="width: 100%;height: 200px">
         </div>
@@ -18,7 +18,8 @@
             </div>
             <div class="likes-share-download d-flex align-items-center justify-content-between">
                 <div>
-                <a href="#"><i class="fa fa-heart" aria-hidden="true"></i> Like (29)</a>
+                <a href="#" class="like">{{ Auth::user()->likes()->where('song_id', $song->id)->first() ? Auth::user()->likes()->where('song_id', $song->id)->first()->like == 1 ? 'You like this song' : 'Like' : 'Like'  }}</a> |
+                <a href="#" class="like">{{ Auth::user()->likes()->where('song_id', $song->id)->first() ? Auth::user()->likes()->where('song_id', $song->id)->first()->like == 0 ? 'You dont like this song' : 'Dislike' : 'Dislike'  }}</a>
                 <span class="ml-2" style="color: #a6a6a6; font-size: 14px;"><i class="fa fa-headphones" aria-hidden="true"></i> Lượt Nghe ({{$song->listen_count}})</span>
                 </div>
                 <div>
@@ -39,6 +40,17 @@
                 </div>
             </div>
             <div id="messageAdd" class="text-center"></div>
+        </div>
+        <div id="topic">
+            <a href="#" class="badge badge-primary">Primary</a>
+            <a id="addTopic" href="#">Manager topics</a><br>
+            <div id="inputtag">
+                <form action="" method="post">
+                    <input name="tagName" id="tagName" class="form-control" type="text" data-role="tagsinput" value="">
+                    <div id="tagList"></div>
+                    <button type="button" class="btn btn-outline-dark">Done</button>
+                </form>
+            </div>
         </div>
     </div>
     <div class="container mt-40">
@@ -71,5 +83,9 @@
     </div>
 
     @include('footer')
+    <script>
+        let token = '{{ \Illuminate\Support\Facades\Session::token() }}';
+        let urlLike = '{{ route('song.like') }}';
+    </script>
 @endsection
 

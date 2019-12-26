@@ -9,6 +9,6 @@ class Category extends Model
     protected $table = 'categories';
     public function songs()
     {
-        return $this->hasMany('App\Song');
+        return $this->belongsToMany('App\Song');
     }
 }
