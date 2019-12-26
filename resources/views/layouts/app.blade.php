@@ -20,8 +20,8 @@
 
     <!-- Core Stylesheet -->
 
-    <link rel="stylesheet" href="{{ asset('storage/source/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('storage/source/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('storage/source/css/bootstrap.min.css') }}">
     <link href="{{ asset('storage/mycss/user-profile.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('storage/mycss/search-result.css') }}">
     <link rel="stylesheet" type="text/css" href="{{asset('storage/Login/fonts/Linearicons-Free-v1.0.0/icon-font.min.css')}}">
