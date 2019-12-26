@@ -24,4 +24,9 @@ class Song extends Model
     public function likes() {
         return $this->belongsTo('App\Like');
     }
+
+    public function comments()
+    {
+        return $this->hasMany('App\comment');
+    }
 }

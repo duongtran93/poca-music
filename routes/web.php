@@ -62,10 +62,15 @@ Route::prefix('playlists')->group(function (){
     Route::get('edit/{id}','PlayListController@edit')->name('playlist.edit');
     Route::post('edit/{id}','PlayListController@update')->name('playlist.update');
     Route::post('likePlaylist','PlayListController@likePlaylist')->name('playlist.like');
+    Route::get('informationOC/{id}', 'PlayListController@informationOC')->name('playlist.informationOC');
+
 });
 
 Route::prefix('singers')->group(function (){
     Route::get('index', 'SingerController@index')->name('singer.index');
     Route::get('create', 'SingerController@create')->name('singer.create');
     Route::post('create', 'SingerController@store')->name('singer.store');
+    Route::get('guest', 'SingerController@singerGuest')->name('singer.guest');
+    Route::get('information/{id}', 'SingerController@information')->name('singer.information');
+    Route::get('informationOC/{id}', 'SingerController@informationSingerGuest')->name('singer.informationGuest');
 });

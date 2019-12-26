@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CreateAndEditPlaylistRequest;
 use App\Http\Requests\SearchRequest;
 use App\Like;
 use App\Playlist;
@@ -33,7 +34,7 @@ class PlayListController extends Controller
         return view('playlist.index');
     }
 
-    public function store(Request $request)
+    public function store(CreateAndEditPlaylistRequest $request)
     {
         $this->playlistService->create($request);
         toastr()->success('Tạo mới thành công!');
@@ -64,7 +65,7 @@ class PlayListController extends Controller
         return view('playlist.information', compact('playlist'));
     }
 
-    public function update(Request $request, $id)
+    public function update(CreateAndEditPlaylistRequest $request, $id)
     {
         $this->playlistService->edit($request , $id);
         toastr()->success('Cập nhật thành công!');
@@ -76,7 +77,8 @@ class PlayListController extends Controller
         return view('playlist.information',compact('playlist', 'songs'));
     }
 
-    public function likePlaylist(Request $request) {
+    public function likePlaylist(Request $request)
+    {
         $playlist_id = $request['playlistId'];
         $is_like = $request['isLike'] === 'true';
         $update = false;
@@ -105,6 +107,12 @@ class PlayListController extends Controller
             $like->save();
         }
         return null;
+    }
+
+    public function informationOC($id){
+        $playlist = $this->playlistService->findById($id);
+        $songs = $playlist->songs()->get();
+        return view('playlist-customer.information',compact('playlist', 'songs'));
     }
 
 }
