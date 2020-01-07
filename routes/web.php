@@ -42,6 +42,8 @@ Route::prefix('song')->group(function () {
     Route::get('song-new', 'SongController@songNew')->name('song.songNew');
     Route::get('listenTheMost', 'SongController@listenTheMost')->name('song.listenTheMost');
     Route::post('like','SongController@like')->name('song.like');
+    Route::post('reply-comment-song/{id}','SongController@replyCommentSong')->name('song.replyCommentSong');
+    Route::post('comment-song/{id}','SongController@commentSong')->name('song.commentSong');
 });
 
 Route::prefix('songs')->group(function (){
@@ -63,6 +65,8 @@ Route::prefix('playlists')->group(function (){
     Route::post('edit/{id}','PlayListController@update')->name('playlist.update');
     Route::post('likePlaylist','PlayListController@likePlaylist')->name('playlist.like');
     Route::get('informationOC/{id}', 'PlayListController@informationOC')->name('playlist.informationOC');
+    Route::get('reply_comment/{id}', 'PlayListController@replyComment')->name('playlist.reply_comment');
+    Route::get('comment/{id}', 'PlayListController@comment')->name('playlist.comment');
 
 });
 

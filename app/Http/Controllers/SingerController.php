@@ -20,7 +20,7 @@ class SingerController extends Controller
 
     public function index()
     {
-        $singers = Singer::where('user_id', Auth::user()->id)->get();
+        $singers = Singer::where('user_id','=', Auth::user()->id)->get();
         return view('singer.index', compact('singers'));
     }
 

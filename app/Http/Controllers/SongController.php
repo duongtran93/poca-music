@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Comment;
 use App\Http\Requests\EditSongRequest;
 use App\Http\Requests\SearchRequest;
 use App\Http\Requests\SongRequest;
 use App\Like;
 use App\Playlist;
+use App\Reply_comment;
 use App\Service\Implement\SongService;
 use App\Song;
 use Illuminate\Http\Request;
@@ -84,7 +86,8 @@ class SongController extends Controller
         Song::where('id', $id)->increment('listen_count');
         $song = $this->songService->findById($id);
         $playlists = Playlist::where('user_id', Auth::user()->id)->get();
-        return view('user.listenMusic', compact('song', 'playlists'));
+        $comments = Comment::where('song_id','=',$song->id)->orderBy('created_at', 'desc')->get();
+        return view('user.listenMusic', compact('song', 'playlists','comments'));
     }
 
     public function songNew()
@@ -139,6 +142,23 @@ class SongController extends Controller
             $like->save();
         }
         return null;
+    }
 
+    public function replyCommentSong(Request $request, $id) {
+        $reply = new Reply_comment();
+        $reply->comment_id = $id;
+        $reply->content = $request->reply_comment_song;
+        $reply->user_id = Auth::user()->id;
+        $reply->save();
+        return back();
+    }
+
+    public function commentSong(Request $request,$id) {
+        $comment = new Comment();
+        $comment->song_id = $id;
+        $comment->content = $request->comment_song;
+        $comment->user_id = Auth::user()->id;
+        $comment->save();
+        return back();
     }
 }

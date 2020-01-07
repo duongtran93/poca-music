@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Comment;
 use App\Http\Requests\SearchRequest;
 use App\Service\Implement\SongService;
 use App\Song;
@@ -28,7 +29,8 @@ class NewSongController extends Controller
     {
         Song::where('id', $id)->increment('listen_count');
         $song = $this->songService->findById($id);
-        return view('song.listenMusic', compact('song'));
+        $comments = Comment::where('song_id','=',$song->id)->orderBy('created_at', 'desc')->get();
+        return view('song.listenMusic', compact('song','comments'));
     }
 
     public function listenTheMost()
