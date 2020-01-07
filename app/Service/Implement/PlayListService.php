@@ -54,10 +54,6 @@ class PlayListService implements PlayListServiceInterface
         $playlist = $this->playlistRepository->finById($id);
         $playlist->name = $request->name;
         if ($request->hasFile('image')){
-            $oldImage = $playlist->image;
-            if ($oldImage){
-                Storage::disk('public')->delete($oldImage);
-            }
             $img = $request->file('image');
             $path = $img->store('images', 'public');
             $playlist->image = $path;
