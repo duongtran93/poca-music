@@ -83,7 +83,6 @@
 <script type="text/javascript" src="{{ asset('storage/myjs/search-result.js') }}"></script>
 <script type="text/javascript" src="{{ asset('storage/myjs/like.js') }}"></script>
 <script type="text/javascript" src="{{ asset('storage/myjs/like-playlist.js') }}"></script>
-<script type="text/javascript" src="{{ asset('storage/myjs/play-playlist.js') }}"></script>
 <script type="text/javascript">
     $.ajaxSetup({
         headers: {

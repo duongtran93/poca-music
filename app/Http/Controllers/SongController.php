@@ -106,11 +106,15 @@ class SongController extends Controller
     public function search(SearchRequest $request) {
         $keyword = $request->search;
         $songs = DB::table('songs')->where('name','LIKE','%'.$keyword.'%')->get();
-        if ($request->ajax()) {
-            $songs = DB::table('songs')->where('name','LIKE','%'.$keyword.'%')->get();
-            return \response()->json($songs);
-        }
-        return view('user.search', compact('songs'));
+        $playlists = DB::table('playlists')->where('name','LIKE','%'.$keyword.'%')->get();
+        $singers = DB::table('singers')->where('name','LIKE','%'.$keyword.'%')->get();
+//        if ($request->ajax()) {
+//            $songs = DB::table('songs')->where('name','LIKE','%'.$keyword.'%')->get();
+//            $playlists = DB::table('playlists')->where('name','LIKE','%'.$keyword.'%')->get();
+//            $singers = DB::table('singers')->where('name','LIKE','%'.$keyword.'%')->get();
+//            return \response()->json($songs);
+//        }
+        return view('user.search', compact('songs','playlists','singers'));
     }
 
     public function like(Request $request) {
