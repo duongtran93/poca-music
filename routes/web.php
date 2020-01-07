@@ -65,8 +65,8 @@ Route::prefix('playlists')->group(function (){
     Route::post('edit/{id}','PlayListController@update')->name('playlist.update');
     Route::post('likePlaylist','PlayListController@likePlaylist')->name('playlist.like');
     Route::get('informationOC/{id}', 'PlayListController@informationOC')->name('playlist.informationOC');
-    Route::get('reply_comment/{id}', 'PlayListController@replyComment')->name('playlist.reply_comment');
-    Route::get('comment/{id}', 'PlayListController@comment')->name('playlist.comment');
+    Route::post('reply_comment/{id}', 'PlayListController@replyComment')->name('playlist.reply_comment');
+    Route::post('comment/{id}', 'PlayListController@comment')->name('playlist.comment');
 
 });
 
