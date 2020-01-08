@@ -47,12 +47,12 @@
 <!-- ***** Welcome Area Start ***** -->
 @include('header')<!-- ***** Welcome Area End ***** -->
 
-@include('body')
+@include('bodyUser')
 
 @include('footer')
 <!-- ******* All JS ******* -->
 
-<!-- jQuery js -->--}}
+<!-- jQuery js -->
 <script src="{{ asset('storage/source/js/jquery.min.js') }}"></script>
 <!-- Popper js -->
 <script src="{{ asset('storage/source/js/popper.min.js') }}"></script>
