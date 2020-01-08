@@ -81,6 +81,7 @@ class PlayListController extends Controller
     }
 
     public function listen($id) {
+        Playlist::where('id', $id)->increment('listen_count');
         $playlist = $this->playlistService->findById($id);
         $songs = $playlist->songs()->get();
         $firstSong = $playlist->songs()->get()->first();
@@ -127,6 +128,7 @@ class PlayListController extends Controller
     }
 
     public function listenGuest($id) {
+        Playlist::where('id', $id)->increment('listen_count');
         $playlist = $this->playlistService->findById($id);
         $songs = $playlist->songs()->get();
         $firstSong = $playlist->songs()->get()->first();
