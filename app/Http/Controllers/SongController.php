@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Comment;
 use App\Http\Requests\EditSongRequest;
 use App\Http\Requests\SearchRequest;
 use App\Http\Requests\SongRequest;
 use App\Like;
 use App\Playlist;
+use App\Reply_comment;
 use App\Service\Implement\SongService;
 use App\Song;
 use App\Tag;
@@ -87,7 +89,8 @@ class SongController extends Controller
         $playlists = Playlist::where('user_id', Auth::user()->id)->get();
         $tags = $song->tags()->get();
         $singers = $song->singers()->get();
-        return view('user.listenMusic', compact('song', 'playlists', 'tags', 'singers'));
+        $comments = Comment::where('song_id','=',$song->id)->orderBy('created_at', 'desc')->get();
+        return view('user.listenMusic', compact('song', 'playlists','comments','tags','singers'));
     }
 
     public function songNew()
@@ -106,11 +109,15 @@ class SongController extends Controller
     public function search(SearchRequest $request) {
         $keyword = $request->search;
         $songs = DB::table('songs')->where('name','LIKE','%'.$keyword.'%')->get();
-        if ($request->ajax()) {
-            $songs = DB::table('songs')->where('name','LIKE','%'.$keyword.'%')->get();
-            return \response()->json($songs);
-        }
-        return view('user.search', compact('songs'));
+        $playlists = DB::table('playlists')->where('name','LIKE','%'.$keyword.'%')->get();
+        $singers = DB::table('singers')->where('name','LIKE','%'.$keyword.'%')->get();
+//        if ($request->ajax()) {
+//            $songs = DB::table('songs')->where('name','LIKE','%'.$keyword.'%')->get();
+//            $playlists = DB::table('playlists')->where('name','LIKE','%'.$keyword.'%')->get();
+//            $singers = DB::table('singers')->where('name','LIKE','%'.$keyword.'%')->get();
+//            return \response()->json($songs);
+//        }
+        return view('user.search', compact('songs','playlists','singers'));
     }
 
     public function like(Request $request) {
@@ -142,6 +149,23 @@ class SongController extends Controller
             $like->save();
         }
         return null;
+    }
 
+    public function replyCommentSong(Request $request, $id) {
+        $reply = new Reply_comment();
+        $reply->comment_id = $id;
+        $reply->content = $request->reply_comment_song;
+        $reply->user_id = Auth::user()->id;
+        $reply->save();
+        return back();
+    }
+
+    public function commentSong(Request $request,$id) {
+        $comment = new Comment();
+        $comment->song_id = $id;
+        $comment->content = $request->comment_song;
+        $comment->user_id = Auth::user()->id;
+        $comment->save();
+        return back();
     }
 }

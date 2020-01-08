@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Comment;
 use App\Http\Requests\CreateSingerRequest;
 use App\Http\Requests\SearchRequest;
+use App\Reply_comment;
 use App\Service\SingerServiceInterface;
 use App\Singer;
 use App\Song;
@@ -23,7 +25,7 @@ class SingerController extends Controller
 
     public function index()
     {
-        $singers = Singer::where('user_id', Auth::user()->id)->get();
+        $singers = Singer::where('user_id','=', Auth::user()->id)->get();
         return view('singer.index', compact('singers'));
     }
 
@@ -53,7 +55,8 @@ class SingerController extends Controller
     {
         $singer = $this->singerService->findById($id);
         $songs = $singer->songs()->get();
-        return view('singer.information' , compact('singer', 'songs'));
+        $comments = Comment::where('singer_id','=',$singer->id)->orderBy('created_at', 'desc')->get();
+        return view('singer.information' , compact('singer', 'songs','comments'));
     }
 
     public function listen($id) {
@@ -67,7 +70,8 @@ class SingerController extends Controller
     {
         $singer = $this->singerService->findById($id);
         $songs = $singer->songs()->get();
-        return view('singer.informationGuest', compact('singer', 'songs'));
+        $comments = Comment::where('singer_id','=',$singer->id)->orderBy('created_at', 'desc')->get();
+        return view('singer.informationGuest', compact('singer', 'songs','comments'));
     }
 
     public function listenGuest($id) {
@@ -101,5 +105,23 @@ class SingerController extends Controller
             $output .= '</ul>';
             echo $output;
         }
+    }
+
+    public function comment(Request $request, $id) {
+        $comment = new Comment();
+        $comment->singer_id = $id;
+        $comment->content = $request->comment;
+        $comment->user_id = Auth::user()->id;
+        $comment->save();
+        return back();
+    }
+
+    public function replyComment(Request $request, $id) {
+        $reply = new Reply_comment();
+        $reply->comment_id = $id;
+        $reply->content = $request->reply_comment;
+        $reply->user_id = Auth::user()->id;
+        $reply->save();
+        return back();
     }
 }

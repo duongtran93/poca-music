@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Comment;
 use App\Http\Requests\CreateAndEditPlaylistRequest;
 use App\Http\Requests\SearchRequest;
 use App\Like;
 use App\Playlist;
 use App\Playlistlike;
+use App\Reply_comment;
 use App\Service\PlayListServiceInterface;
 use App\Song;
 use Illuminate\Http\Request;
@@ -74,7 +76,8 @@ class PlayListController extends Controller
     public function information($id){
         $playlist = $this->playlistService->findById($id);
         $songs = $playlist->songs()->get();
-        return view('playlist.information',compact('playlist', 'songs'));
+        $comments = Comment::where('playlist_id','=',$playlist->id)->orderBy('created_at', 'desc')->get();
+        return view('playlist.information',compact('playlist', 'songs','comments'));
     }
 
     public function listen($id) {
@@ -119,7 +122,8 @@ class PlayListController extends Controller
     public function informationOC($id){
         $playlist = $this->playlistService->findById($id);
         $songs = $playlist->songs()->get();
-        return view('playlist-customer.information',compact('playlist', 'songs'));
+        $comments = Comment::where('playlist_id','=',$playlist->id)->orderBy('created_at', 'desc')->get();
+        return view('playlist-customer.information',compact('playlist', 'songs','comments'));
     }
 
     public function listenGuest($id) {
@@ -129,4 +133,21 @@ class PlayListController extends Controller
         return view('playlist-customer.listenGuest', compact('songs', 'firstSong','playlist'));
     }
 
+    public function replyComment(Request $request,$id) {
+        $reply = new Reply_comment();
+        $reply->comment_id = $id;
+        $reply->content = $request->reply_comment;
+        $reply->user_id = Auth::user()->id;
+        $reply->save();
+        return back();
+    }
+
+    public function comment(Request $request, $id) {
+        $comment = new Comment();
+        $comment->playlist_id = $id;
+        $comment->content = $request->comment;
+        $comment->user_id = Auth::user()->id;
+        $comment->save();
+        return back();
+    }
 }
