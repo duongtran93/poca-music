@@ -24,5 +24,7 @@ class Comment extends Model
         return $this->belongsTo('App\Playlist');
     }
 
-
+    public function reply_comments() {
+        return $this->hasMany('App\Reply_comment');
+    }
 }

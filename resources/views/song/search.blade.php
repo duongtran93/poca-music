@@ -25,7 +25,7 @@
                             <div class="card h-100">
                                 <img src="{{asset('storage/'.$playlist->image)}}" class="card-img-top"
                                      alt="..." style="height: 230px ">
-                                <a href="{{route('songs.listen',$playlist->id)}}"><h5>{{$playlist->name}}</h5></a>
+                                <a href="{{route('playlist.informationOC',$playlist->id)}}"><h5>{{$playlist->name}}</h5></a>
                             </div>
                         </div>
                     @endforeach
