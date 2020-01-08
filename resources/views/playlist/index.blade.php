@@ -25,7 +25,8 @@
                                          alt="..." style="width:100%;height: 200px;border-radius: 50%">
                                     <a href="{{route('playlist.information',$playlist->id)}}">
                                         <h5 class="text-center">{{$playlist->name}}</h5></a>
-                                    <p class="text-center">Tạo bởi {{\Illuminate\Support\Facades\Auth::user()->name}}</p>
+                                    <p class="text-center">Tạo
+                                        bởi {{\Illuminate\Support\Facades\Auth::user()->name}}</p>
                                 </div>
                             </div>
                         </a>
