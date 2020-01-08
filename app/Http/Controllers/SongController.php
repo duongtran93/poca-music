@@ -12,6 +12,7 @@ use App\Playlist;
 use App\Reply_comment;
 use App\Service\Implement\SongService;
 use App\Song;
+use App\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -86,8 +87,10 @@ class SongController extends Controller
         Song::where('id', $id)->increment('listen_count');
         $song = $this->songService->findById($id);
         $playlists = Playlist::where('user_id', Auth::user()->id)->get();
+        $tags = $song->tags()->get();
+        $singers = $song->singers()->get();
         $comments = Comment::where('song_id','=',$song->id)->orderBy('created_at', 'desc')->get();
-        return view('user.listenMusic', compact('song', 'playlists','comments'));
+        return view('user.listenMusic', compact('song', 'playlists','comments','tags','singers'));
     }
 
     public function songNew()

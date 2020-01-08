@@ -34,6 +34,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('storage/Login/css/main.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('storage/taginput/tagsinput.css') }}">
 
+
     <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
     <script>tinymce.init({selector:'textarea'});</script>
 {{--    <link href="{{ asset('storage/mycss/editUser.css') }}" rel="stylesheet">--}}
@@ -73,6 +74,7 @@
 <script type="text/javascript" src="{{ asset('storage/myjs/add-song-to-playlist.js') }}"></script>
 <script type="text/javascript" src="{{ asset('storage/myjs/delete-song-in-playlist.js') }}"></script>
 <script type="text/javascript" src="{{ asset('storage/myjs/add-taginput.js') }}"></script>
+<script type="text/javascript" src="{{ asset('storage/myjs/add-singer-tag.js') }}"></script>
 <script src="{{ asset('storage/Login/vendor/animsition/js/animsition.min.js') }}"></script>
 <script src="{{ asset('storage/Login/vendor/select2/select2.min.js') }}"></script>
 <script src="{{ asset('storage/Login/vendor/daterangepicker/moment.min.js') }}"></script>
@@ -83,6 +85,7 @@
 <script type="text/javascript" src="{{ asset('storage/myjs/search-result.js') }}"></script>
 <script type="text/javascript" src="{{ asset('storage/myjs/like.js') }}"></script>
 <script type="text/javascript" src="{{ asset('storage/myjs/like-playlist.js') }}"></script>
+<script type="text/javascript" src="{{ asset('storage/myjs/autocomplete.js') }}"></script>
 <script type="text/javascript">
     $.ajaxSetup({
         headers: {

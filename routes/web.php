@@ -65,6 +65,8 @@ Route::prefix('playlists')->group(function (){
     Route::post('edit/{id}','PlayListController@update')->name('playlist.update');
     Route::post('likePlaylist','PlayListController@likePlaylist')->name('playlist.like');
     Route::get('informationOC/{id}', 'PlayListController@informationOC')->name('playlist.informationOC');
+    Route::get('listen/{id}', 'PlayListController@listen')->name('playlist.listen');
+    Route::get('listenGuest/{id}', 'PlayListController@listenGuest')->name('playlist.listenGuest');
     Route::post('reply_comment/{id}', 'PlayListController@replyComment')->name('playlist.reply_comment');
     Route::post('comment/{id}', 'PlayListController@comment')->name('playlist.comment');
 
@@ -77,7 +79,16 @@ Route::prefix('singers')->group(function (){
     Route::get('guest', 'SingerController@singerGuest')->name('singer.guest');
     Route::get('information/{id}', 'SingerController@information')->name('singer.information');
     Route::get('informationOC/{id}', 'SingerController@informationSingerGuest')->name('singer.informationGuest');
+    Route::post('addSingers/{id}', 'SingerController@addSingers')->name('singer.addSingers');
+    Route::post('autocomplete', 'SingerController@autocomplete')->name('singer.autocomplete');
+    Route::get('listen/{id}', 'SingerController@listen')->name('singer.listen');
+    Route::get('listenGuest/{id}', 'SingerController@listenGuest')->name('singer.listenGuest');
     Route::post('comment/{id}', 'SingerController@comment')->name('singer.comment');
     Route::post('reply_comment/{id}', 'SingerController@replyComment')->name('singer.reply_comment');
+});
 
+Route::prefix('tags')->group(function () {
+    Route::get('index/{id}', 'TagController@index')->name('tags.index');
+    Route::post('addTags/{id}', 'TagController@addTags')->name('tags.create');
+    Route::post('autocomplete', 'TagController@autocomplete')->name('tags.autocomplete');
 });

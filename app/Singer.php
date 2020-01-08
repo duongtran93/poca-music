@@ -16,4 +16,8 @@ class Singer extends Model
     {
         return $this->hasMany('App\comment');
     }
+
+    public function songs() {
+        return $this->belongsToMany('App\Song');
+    }
 }

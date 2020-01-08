@@ -80,6 +80,13 @@ class PlayListController extends Controller
         return view('playlist.information',compact('playlist', 'songs','comments'));
     }
 
+    public function listen($id) {
+        $playlist = $this->playlistService->findById($id);
+        $songs = $playlist->songs()->get();
+        $firstSong = $playlist->songs()->get()->first();
+        return view('playlist.listen', compact('songs', 'firstSong','playlist'));
+    }
+
     public function likePlaylist(Request $request)
     {
         $playlist_id = $request['playlistId'];
@@ -117,6 +124,13 @@ class PlayListController extends Controller
         $songs = $playlist->songs()->get();
         $comments = Comment::where('playlist_id','=',$playlist->id)->orderBy('created_at', 'desc')->get();
         return view('playlist-customer.information',compact('playlist', 'songs','comments'));
+    }
+
+    public function listenGuest($id) {
+        $playlist = $this->playlistService->findById($id);
+        $songs = $playlist->songs()->get();
+        $firstSong = $playlist->songs()->get()->first();
+        return view('playlist-customer.listenGuest', compact('songs', 'firstSong','playlist'));
     }
 
     public function replyComment(Request $request,$id) {

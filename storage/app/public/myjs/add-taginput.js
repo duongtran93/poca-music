@@ -4,18 +4,24 @@ $(document).ready(function () {
         $('#inputtag').show();
     });
     $('#tagName').keyup(function () {
-        console.log(1);
-
         let query = $('#tagName').val();
-        $.ajax({
-            url: "http://127.0.0.1:8000/song/searchTags",
-            method: "POST",
-            data: {query: query},
-            success: function (data) {
-                $('#tagList').fadeIn();
-                $('#tagList').html(data);
-            },
-        })
+        if (query !== '') {
+            let _token = $('input[name="_token"]').val();
+            $.ajax({
+                url: "http://127.0.0.1:8000/tags/autocomplete",
+                method: "POST",
+                data: {query: query, _token: _token},
+                success: function (data) {
+                    $('#tagList').fadeIn();
+                    $('#tagList').html(data);
+                },
+            })
+        }
+
+    });
+    $(document).on('click', 'li', function () {
+        $('#tagName').val($(this).text());
+        $('#tagList').fadeOut();
     })
 
 });

@@ -1,0 +1,14 @@
+
+.player .panel{ margin: 20px; padding:0px; height:34px;}
+.player .audio-panel{border:none !important;}
+.player #playlist,audio{width:100%;}
+.player #playlist .active a{color:#fff;text-decoration:none;}
+.player ul{list-style:none; margin:0px; padding:20px;}
+.player ul li{margin:0px; padding:0px;}
+.player ul li, a{transition:all 0.5s;}
+.player #playlist .list-group-item.active a{ text-decoration:none; color:#fff;}
+.player ul li a{display:block; position:relative; width:100%;}
+.player ul li a{display:block; text-decoration:none;}
+.player ul li:hover{background-color:#333;}
+.player ul li a:hover{text-decoration:none; color: #fff;}
+.player ul li a{color:#fff; text-decoration:none;}

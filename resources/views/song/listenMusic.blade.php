@@ -20,8 +20,7 @@
             </div>
             <div class="likes-share-download d-flex align-items-center justify-content-between">
                 <div>
-                    <span class="ml-2" style="color: #a6a6a6; font-size: 14px;"><i class="fa fa-headphones"
-                                                                                   aria-hidden="true"></i> Lượt Nghe ({{$song->listen_count}})</span>
+                    <span class="ml-2" style="color: #a6a6a6; font-size: 14px;"><i class="fa fa-headphones" aria-hidden="true"></i> Lượt Nghe ({{$song->listen_count}})</span>
                 </div>
                 <div>
                     <a href="#" class="mr-4"><i class="fa fa-share-alt" aria-hidden="true"></i> Chia sẻ(04)</a>

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     @include('menu-user')
-    <div class="container pt-3">
+    <div class="container" style="margin-top: 80px">
         <div class="row">
             <div class="col-4" style="height: auto">
                 <div class="col-10 mt-lg-4">
@@ -32,9 +32,12 @@
                             </div>
                         </div>
                     </div>
+                    <div>
+                        <a href="{{ route('playlist.listen', $playlist->id) }}"><h2>Nghe Playlist Này</h2></a>
+                    </div>
                 </div>
             </div>
-            <div class="col-8" style="height: auto">
+            <div class="col-8 mt-3" style="height: auto">
                 <h1>Danh sách bài hát</h1>
                 <table class="table table-bordered">
                     <thead class="thead-dark">
@@ -66,6 +69,7 @@
             </div>
         </div>
     </div>
+
     <div class="container mt-40">
         <div class="row mt-5">
             <h3>Bình luận</h3><br>
@@ -143,7 +147,7 @@
                 <div class="playlist-form">
                     <form action="{{route('playlist.update', $playlist->id)}}" method="post" enctype="multipart/form-data">
                         @csrf
-                        <h2 class="text-center">Thay đổi thông tin Playlist</h2>
+                        <h2 class="text/var/www/html/test-center">Thay đổi thông tin Playlist</h2>
                         <h6>Tên</h6>
                         <div class="input-group">
                             <input type="text" class="form-control"  autofocus name="name" value="{{$playlist->name}}" required>
@@ -167,3 +171,4 @@
         let urlLikePlaylist = '{{ route('playlist.like') }}'
     </script>
 @endsection
+
