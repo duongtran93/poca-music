@@ -18,6 +18,8 @@
     <!-- Core Stylesheet -->
     <link rel="stylesheet" href="{{ asset('storage/source/style.css') }}">
     <link rel="stylesheet" href="{{ asset('storage/source/css/bootstrap.min.css') }}">
+    <link href="{{ asset('storage/mycss/user-profile.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('storage/mycss/footer.css') }}">
     <link rel="stylesheet" href="{{ asset('storage/mycss/login.css') }}">
     <link rel="stylesheet" href="{{ asset('storage/mycss/register.css') }}">
     <link rel="stylesheet" href="{{ asset('storage/mycss/search-result.css') }}">

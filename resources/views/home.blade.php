@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="{{ asset('storage/source/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('storage/source/style.css') }}">
     <link href="{{ asset('storage/mycss/user-profile.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('storage/mycss/footer.css') }}">
     <link rel="stylesheet" href="{{ asset('storage/mycss/toastr.css') }}">
     <link rel="stylesheet" href="{{ asset('storage/mycss/search-result.css') }}">
     <style>
@@ -47,12 +48,12 @@
 <!-- ***** Welcome Area Start ***** -->
 @include('header')<!-- ***** Welcome Area End ***** -->
 
-@include('body')
+@include('bodyUser')
 
 @include('footer')
 <!-- ******* All JS ******* -->
 
-<!-- jQuery js -->--}}
+<!-- jQuery js -->
 <script src="{{ asset('storage/source/js/jquery.min.js') }}"></script>
 <!-- Popper js -->
 <script src="{{ asset('storage/source/js/popper.min.js') }}"></script>

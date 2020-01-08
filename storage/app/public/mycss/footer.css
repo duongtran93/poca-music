@@ -1,0 +1,8 @@
+.z-logo {
+    height: 40px;
+    width: 40px;
+    display: inline-block;
+    background-image: url(../images/logo-mp-3.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}

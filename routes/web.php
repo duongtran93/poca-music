@@ -14,13 +14,11 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('welcome');
+Route::get('/', 'HomePageController@welcome')->name('welcome');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomePageController@home')->name('home');
 Route::get('/redirect/{social}', 'SocialAuthController@redirect');
 Route::get('/callback/{social}', 'SocialAuthController@callback');
 Route::prefix('user')->group(function () {
@@ -92,3 +90,5 @@ Route::prefix('tags')->group(function () {
     Route::post('addTags/{id}', 'TagController@addTags')->name('tags.create');
     Route::post('autocomplete', 'TagController@autocomplete')->name('tags.autocomplete');
 });
+
+
