@@ -14,6 +14,9 @@
                             </div>
                         </div>
                     </div>
+                    <div>
+                        <a href="{{ route('playlist.listenGuest', $playlist->id) }}"><h2>Nghe Playlist Này</h2></a>
+                    </div>
                 </div>
             </div>
             <div class="col-8" style="height: auto">
@@ -38,26 +41,6 @@
                     @endforeach
                     </tbody>
                 </table>
-                <div id="messageDelete" class="text-center"></div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="playlistModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-         aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="playlist-form">
-                    <form action="{{route('playlist.update', $playlist->id)}}" method="post">
-                        @csrf
-                        <h2 class="text-center">Thay đổi tên Playlist</h2>
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Nhập tên playlist" autofocus name="name" value="{{$playlist->name}}" >
-                        </div>
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-success btn-block playlist-btn mt-2">Lưu</button>
-                        </div>
-                    </form>
-                </div>
             </div>
         </div>
     </div>

@@ -1,6 +1,5 @@
 @extends('layouts.app')
 @section('content')
-    @include('menu-user')
         @include('menu')
         <div class="poca-music-area mt-100 d-flex align-items-center flex-wrap ml-2 mr-2" data-animation="fadeInUp"
              data-delay="900ms">
@@ -14,7 +13,7 @@
                     <p>By <a href="#" class="music-author">{{$song->user->name}}</a></p>
                 </div>
                 <div class="poca-music-player">
-                    <audio preload="auto" controls>
+                    <audio id="myAudio" preload="auto" controls>
                         <source src="{{ asset('storage/' . $song->file) }}">
                     </audio>
                 </div>

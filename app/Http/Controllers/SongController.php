@@ -10,6 +10,7 @@ use App\Like;
 use App\Playlist;
 use App\Service\Implement\SongService;
 use App\Song;
+use App\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -84,7 +85,9 @@ class SongController extends Controller
         Song::where('id', $id)->increment('listen_count');
         $song = $this->songService->findById($id);
         $playlists = Playlist::where('user_id', Auth::user()->id)->get();
-        return view('user.listenMusic', compact('song', 'playlists'));
+        $tags = $song->tags()->get();
+        $singers = $song->singers()->get();
+        return view('user.listenMusic', compact('song', 'playlists', 'tags', 'singers'));
     }
 
     public function songNew()

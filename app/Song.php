@@ -29,4 +29,13 @@ class Song extends Model
     {
         return $this->hasMany('App\comment');
     }
+
+    public function tags()
+    {
+        return $this->belongsToMany('App\Tag');
+    }
+
+    public function singers() {
+        return $this->belongsToMany('App\Singer');
+    }
 }

@@ -42,13 +42,32 @@
             <div id="messageAdd" class="text-center"></div>
         </div>
         <div id="topic">
-            <a href="#" class="badge badge-primary">Sơ cấp</a>
-            <a id="addTopic" href="#">Quản lí chủ đề</a><br>
+            @foreach($tags as $tag)
+            <a href="{{ route('tags.index', $tag->id) }}" class="badge badge-primary">{{ $tag->name }}</a>
+            @endforeach
+            <a id="addTopic" href="#">Gắn Tags</a><br>
             <div id="inputtag">
-                <form action="" method="post">
-                    <input name="tagName" id="tagName" class="form-control" type="text" data-role="tagsinput" value="">
-                    <div id="tagList"></div>
-                    <button type="button" class="btn btn-outline-dark">Xong</button>
+                <form action="{{ route('tags.create', $song->id) }}" method="post">
+                    @csrf
+                    <div class="row">
+                        <input name="tagName" id="tagName" class="form-control col-8 ml-3" type="text" value="">
+                        <button type="submit" class="btn btn-outline-dark col-3 ml-2">Xong</button>
+                    </div>
+                    <div id="tagList" style="position: absolute"></div>
+                </form>
+            </div>
+            @foreach($singers as $singer)
+            <a href="{{ route('singer.information', $singer->id) }}" class="badge badge-info">{{ $singer->name }}</a>
+            @endforeach
+            <a id="addSinger" href="#">Thêm Ca Sĩ</a><br>
+            <div id="inputSinger">
+                <form action="{{ route('singer.addSingers', $song->id) }}" method="post">
+                    @csrf
+                    <div class="row">
+                        <input name="tagSinger" id="tagSinger" class="form-control col-8 ml-3" type="text" value="">
+                        <button type="submit" class="btn btn-outline-dark col-3 ml-2">Xong</button>
+                    </div>
+                    <div id="singerList" style="position: absolute"></div>
                 </form>
             </div>
         </div>
@@ -86,6 +105,7 @@
     <script>
         let token = '{{ \Illuminate\Support\Facades\Session::token() }}';
         let urlLike = '{{ route('song.like') }}';
+
     </script>
 @endsection
 
