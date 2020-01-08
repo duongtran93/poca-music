@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="{{ asset('storage/source/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('storage/source/style.css') }}">
     <link href="{{ asset('storage/mycss/user-profile.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('storage/mycss/footer.css') }}">
     <link rel="stylesheet" href="{{ asset('storage/mycss/toastr.css') }}">
     <link rel="stylesheet" href="{{ asset('storage/mycss/search-result.css') }}">
     <style>
